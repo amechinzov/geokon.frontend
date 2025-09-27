@@ -6,7 +6,7 @@
     "php": ">=8.1",
     "twig/twig": "^3.7"
   },
-  "minimum-stability": "master",
+  "minimum-stability": "dev",
   "homepage": "https://github.com/amechinzov/geokon.frontend.twig",
   "type": "twig-module"
 }
