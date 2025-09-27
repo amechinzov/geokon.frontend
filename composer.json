@@ -1,5 +1,5 @@
 {
-  "name": "amechinzov/geokon.frontend.twig",
+  "name": "amechinzov/geokon.frontend",
   "description": "frontend twig repo geokon",
   "license": "MIT",
   "require": {
