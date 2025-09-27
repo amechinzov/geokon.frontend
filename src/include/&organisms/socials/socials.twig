@@ -1,0 +1,10 @@
+<div class="socials">
+    <div class="socials__wrapper">
+        {% for item in block.items %}
+            {% view '^social' with {social: item} %}
+        {% endfor %}
+    </div>
+    {% if block.text %}
+        <div class="socials__text">{{ block.text }}</div>
+    {% endif %}
+</div>

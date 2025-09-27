@@ -1,0 +1,16 @@
+{% extends "../include/layout/default.twig" %}
+
+{% block content %}
+
+    {% view '&first' with { block: first } %}
+    {% view '&screen' with { block: about|merge({ backgroundFill: 'white' }) } %}
+    {% view '&screen' with { block: factoids|merge({ backgroundFill: 'green' }) } %}
+    {% view '&screen' with { block: product|merge({ backgroundFill: 'grey' }) } %}
+    {% view '&screen' with { block: services|merge({ backgroundFill: 'white' }) } %}
+    {% view '&screen' with { block: projects|merge({ backgroundFill: 'grey' }) } %}
+    {% view '&screen' with { block: howWeWork|merge({ backgroundFill: 'white' }) } %}
+    {% view '&screen' with { block: partners|merge({ backgroundFill: 'white' }) } %}
+    {% view '&screen' with { block: people|merge({ backgroundFill: 'green' }) } %}
+    {% view '&form' with { block: form } %}
+
+{% endblock %}

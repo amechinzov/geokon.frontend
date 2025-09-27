@@ -1,0 +1,17 @@
+<div class="card">
+
+	{% svg "24/user" %}
+
+
+	{% if card.title %}
+		<div class="card__title">
+			{{ card.title }}
+		</div>
+	{% endif %}
+
+	{% if card.button %}
+		<div class="card__button">
+			{% view '@button' with { button: card.button } %}
+		</div>
+	{% endif %}
+</div>

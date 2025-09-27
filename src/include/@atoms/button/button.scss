@@ -1,0 +1,116 @@
+.button {
+  $root: &;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(48);
+  min-width: rem(80);
+  padding: 0 rem(24);
+  background-color: $color-green;
+  color: $color-white;
+  border: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px transparent;
+  cursor: pointer;
+  outline: none;
+
+  @include defaultTransition(background-color, color, box-shadow);
+
+  // white theme
+  @include hover {
+    &:not(#{$root}--disabled):not(:disabled) {
+      color: $color-primary;
+      background-color: $color-white;
+    }
+  }
+
+  &:focus-visible {
+    &:not(#{$root}--disabled):not(:disabled) {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+
+  &--fit {
+    width: 100%;
+  }
+
+  &[disabled],
+  &--disabled {
+    background-color: $color-white;
+    color: $color-black-40;
+    border-color: transparent;
+    cursor: not-allowed;
+
+    &[href] {
+      pointer-events: none;
+    }
+  }
+
+  &--minify {
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+      min-width: auto;
+      border-radius: 50%;
+      width: rem(48);
+      height: rem(48);
+    }
+  }
+
+  &--minify-md {
+    @include media-breakpoint-down(md) {
+      padding: 0;
+      min-width: auto;
+      border-radius: 50%;
+      width: rem(48);
+      height: rem(48);
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: block;
+
+    @include defaultTransition(opacity);
+
+    #{$root}--loading & {
+      opacity: 0;
+    }
+
+    #{$root}--sm & {
+      display: none;
+    }
+
+    #{$root}--minify & {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    #{$root}--minify-md & {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    #{$root}--xl & {
+      text-align: left;
+    }
+  }
+  &--filter{
+    background-color: $color-dark-grey;
+    color: $color-primary;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+    &.active{
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}

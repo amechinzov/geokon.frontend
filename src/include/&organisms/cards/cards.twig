@@ -1,0 +1,17 @@
+<div class="cards{% if block.class %} {{ block.class }}{% endif %}">
+    {% for key,item in block.items %}
+        <a href="javascript:void(0)" class="cards__item" {% if item.image %}style="background-image: url('{{ item.image.src }}')" {% endif %} data-modal="{{ item.link }}">
+            <div class="cards__item-button">
+                {% if item.icon %}
+                    {% view '@icon' with {icon: item.icon} %}
+                {% else %}
+                    <div class="cards__item-button-default">
+                        {% svg '20/arrow-right' %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="cards__item-title">{{ item.title }}</div>
+            <div class="cards__item-text">{{ item.text }}</div>
+        </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,14 @@
+.projects {
+  $root: &;
+
+  .filters {
+    margin-top: rem(48);
+    margin-bottom: rem(24);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(32);
+    margin-top: rem(24);
+  }
+}

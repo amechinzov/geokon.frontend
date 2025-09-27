@@ -1,0 +1,17 @@
+.social {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: $color-white;
+    color: #253653;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: $color-light-green;
+        color: $color-white;
+    }
+}

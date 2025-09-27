@@ -1,0 +1,13 @@
+<div class="factoid">
+    {% if factoid.number %}
+        <div class="factoid__number">
+            {{ factoid.number }}
+        </div>
+    {% endif %}
+
+    {% if factoid.text %}
+        <div class="factoid__text">
+            {{ factoid.text }}
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,9 @@
+.footer {
+  $root: &;
+
+  display: block;
+
+  &__text {
+    font-size: 12px;
+  }
+}

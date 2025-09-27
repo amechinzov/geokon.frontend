@@ -1,0 +1,23 @@
+{
+  "modal": {
+    "title": "Системы отопления, вентиляции и&nbsp;кондиционирования",
+    "text": "<p>Lorem ipsum dolor sit amet consecte tur adipiscing elit semper. Lorem ipsum dolor sit amet consecte tur adipiscing elit semper.</p><p>Lorem ipsum dolor sit amet consecte tur adipiscing elit semper. Lorem ipsum dolor sit amet consecte tur adipiscing elit semper. \nLorem ipsum dolor sit amet consecte tur adipiscing elit semper. Lorem ipsum dolor sit amet consecte tur adipiscing elit semper. Lorem ipsum dolor sit amet consecte tur adipiscing elit semper. Lorem ipsum dolor sit amet consecte tur adipiscing elit semper.</p>",
+    "examples": {
+      "title": "Примеры работ",
+      "items": [
+        {
+          "src": "/img/modal/1.jpg",
+          "alt": "service"
+        },
+        {
+          "src": "/img/modal/2.jpg",
+          "alt": "service"
+        },
+        {
+          "src": "/img/modal/3.jpg",
+          "alt": "service"
+        }
+      ]
+    }
+  }
+}

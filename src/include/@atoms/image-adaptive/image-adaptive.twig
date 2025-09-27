@@ -1,0 +1,58 @@
+{% set placeholder = placeholder ?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' %}
+{% set breakpoints = breakpoints ?: { md: 640, lg: 1025 } %}
+
+{% if not image_adaptive.disable_lazy %}
+	<div class="image" {% if not image_adaptive.logo and not image_adaptive.image %} itemscope itemtype="http://schema.org/ImageObject" {% endif %}>
+		<picture>
+			{% if image_adaptive.mob %}
+				<source media="(max-width: {{ breakpoints.md - 1 }}px)" srcset="{{ placeholder?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}" data-srcset="{% for item in image_adaptive.mob.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}">
+			{% endif %}
+			{% if image_adaptive.mob_webp %}
+				<source media="(max-width: {{ breakpoints.md - 1 }}px)" type="image/webp" srcset="{{ image_adaptive.mob_webp.src }}">
+			{% endif %}
+			{% if image_adaptive.tab %}
+				<source media="(max-width: {{ breakpoints.lg - 1 }}px)" srcset="{{ placeholder?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}" data-srcset="{% for item in image_adaptive.tab.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}">
+			{% endif %}
+			{% if image_adaptive.tab_webp %}
+				<source media="(max-width: {{ breakpoints.lg - 1 }}px)" type="image/webp" srcset="{{ image_adaptive.tab_webp.src }}">
+			{% endif %}
+			{% if image_adaptive.webp %}
+				<source media="(min-width: {{ breakpoints.lg }})" type="image/webp" srcset="{{ image_adaptive.webp.src }}">
+			{% endif %}
+			<img class="image is-lazy{% if image_adaptive.class %} {{ image_adaptive.class }}{% endif %}{{ image_adaptive.fit ? ' is-cover' : '' }}{{ image_adaptive.fill ? ' fill' : '' }}" src="{{ placeholder?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}" data-src="{{ image_adaptive.src }}" alt="{{ image_adaptive.alt?: 'image' }}" {% if image_adaptive.srcset %} data-srcset="{% for item in image_adaptive.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}" {% endif %} {% if image_adaptive.position %} data-position="{{ image_adaptive.position }}" {% endif %}>
+		</picture>
+		{% if image_adaptive.alt and not image_adaptive.logo and not image_adaptive.image %}
+			<span itemprop="description" class="visually-hidden">{{ image_adaptive.alt?: 'image' }}</span>
+		{% endif %}
+		<noscript>
+			<img src="{{ image_adaptive.src }}" alt="{{ image_adaptive.alt?: 'image' }}" {% if not image_adaptive.logo and not image_adaptive.image %} itemprop="contentUrl" {% elseif image_adaptive.logo %} itemprop="url image" {% elseif image_adaptive.image %} itemprop="image" {% endif %}/>
+		</noscript>
+	</div>
+{% else %}
+	<div class="image{% if image_adaptive.class %} {{ image_adaptive.class }}{% endif %}" {% if not image_adaptive.logo and not image_adaptive.image %} itemscope itemtype="http://schema.org/ImageObject" {% endif %}>
+		<picture>
+			{% if image_adaptive.mob %}
+				<source media="(max-width: {{ breakpoints.md - 1 }}px)" srcset="{% for item in image_adaptive.mob.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}">
+			{% endif %}
+			{% if image_adaptive.mob_webp %}
+				<source media="(max-width: {{ breakpoints.md - 1 }}px)" type="image/webp" srcset="{{ image_adaptive.mob_webp.src }}">
+			{% endif %}
+			{% if image_adaptive.tab %}
+				<source media="(max-width: {{ breakpoints.lg - 1 }}px)" srcset="{% for item in image_adaptive.tab.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}">
+			{% endif %}
+			{% if image_adaptive.tab_webp %}
+				<source media="(max-width: {{ breakpoints.lg - 1 }}px)" type="image/webp" srcset="{{ image_adaptive.tab_webp.src }}">
+			{% endif %}
+			{% if image_adaptive.webp %}
+				<source media="(min-width: {{ breakpoints.lg }})" type="image/webp" srcset="{{ image_adaptive.webp.src }}">
+			{% endif %}
+			<img src="{{ image_adaptive.src }}" alt="{{ image_adaptive.alt?: 'image' }}" {% if image_adaptive.srcset %} srcset="{% for item in image_adaptive.srcset %}{{ item.src }} {{ item.scale }}x{% if not loop.last %}, {% endif %}{% endfor %}" {% endif %} {% if image_adaptive.position %} data-position="{{ image_adaptive.position }}" {% endif %}>
+		</picture>
+		{% if image_adaptive.alt and not image_adaptive.logo and not image_adaptive.image %}
+			<span itemprop="description" class="visually-hidden">{{ image_adaptive.alt?: 'image' }}</span>
+		{% endif %}
+		<noscript>
+			<img src="{{ image_adaptive.src }}" alt="{{ image_adaptive.alt?: 'image' }}" {% if not image_adaptive.logo and not image_adaptive.image %} itemprop="contentUrl" {% elseif image_adaptive.logo %} itemprop="url image" {% elseif image_adaptive.image %} itemprop="image" {% endif %}/>
+		</noscript>
+	</div>
+{% endif %}

@@ -1,0 +1,48 @@
+{% set is_bg_image = image.type == 'bg' %}
+{% set is_lazy = not image.disable_lazy %}
+{% set is_swiper_lazy = image.swiper_lazy %}
+{% set placeholder = placeholder ?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' %}
+{% set alt_text = image.alt ?: image.caption ?: 'image' %}
+
+{% if is_bg_image %}
+	{% if not is_lazy %}
+		<div class="image{% if image.class %} {{ image.class }}{% endif %}{{ image.fill ? ' fill' : '' }}" role="img" {% if image.attr %} {{ image.attr }} {% endif %} aria-label="{{ alt_text }}" style="background-image: url('{{ image.src }}');" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}></div>
+	{% elseif is_swiper_lazy %}
+		<div class="image swiper-lazy{% if image.class %} {{ image.class }}{% endif %}{{ image.fill ? ' fill' : '' }}" role="img" {% if image.attr %} {{ image.attr }} {% endif %} aria-label="{{ alt_text }}" data-background="{{ image.src }}" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}></div>
+		<div class="swiper-lazy-preloader"></div>
+	{% else %}
+		<div class="image is-lazy{% if image.class %} {{ image.class }}{% endif %}{{ image.fill ? ' fill' : '' }}" role="img" {% if image.attr %} {{ image.attr }} {% endif %} aria-label="{{ alt_text }}" data-bg="{{ image.src }}" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}></div>
+	{% endif %}
+{% else %}
+	<div class="image{% if image.class %} {{ image.class }}{% endif %}" {% if not image.logo and not image.image %} itemscope itemtype="http://schema.org/ImageObject" {% endif %}>
+		{% if not is_lazy %}
+			<picture>
+				{% if image.webp %}
+					<source type="image/webp" srcset="{{ image.webp.src }}">
+				{% endif %}
+				<img src="{{ image.src }}" {% if image.attr %} {{ image.attr }} {% endif %} {% if image.srcset %} srcset="{{ image.srcset }}" {% endif %} alt="{{ alt_text }}" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}>
+			</picture>
+		{% elseif is_swiper_lazy %}
+			<picture>
+				{% if image.webp %}
+					<source type="image/webp" srcset="{{ image.webp.src }}">
+				{% endif %}
+				<img class="swiper-lazy" src="{{ placeholder?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}" data-src="{{ image.src }}" {% if image.attr %} {{ image.attr }} {% endif %} {% if image.srcset %} data-srcset="{{ image.srcset }}" {% endif %} alt="{{ alt_text }}" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}>
+			</picture>
+			<div class="swiper-lazy-preloader"></div>
+		{% else %}
+			<picture>
+				{% if image.webp %}
+					<source type="image/webp" srcset="{{ image.webp.src }}">
+				{% endif %}
+				<img class="is-lazy" src="{{ placeholder?: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }}" data-src="{{ image.src }}" {% if image.attr %} {{ image.attr }} {% endif %} {% if image.srcset %} data-srcset="{{ image.srcset }}" {% endif %} alt="{{ image.alt ?: image.caption ?: 'image' }}" {% if image.size.width and image.size.height %} data-size="{{ image.size.width }}x{{ image.size.height }}" data-gallery-image="{{ image.src }}" {% endif %}>
+			</picture>
+		{% endif %}
+		{% if alt_text and not image.logo and not image.image %}
+			<span itemprop="description" class="visually-hidden">{{ alt_text }}</span>
+		{% endif %}
+		<noscript>
+			<img src="{{ image.src }}" alt="{{ alt_text }}" {% if not image.logo and not image.image %} itemprop="contentUrl" {% elseif image.logo %} itemprop="url image" {% elseif image.image %} itemprop="image" {% endif %}/>
+		</noscript>
+	</div>
+{% endif %}

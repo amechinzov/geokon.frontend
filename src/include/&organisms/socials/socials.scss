@@ -1,0 +1,15 @@
+.socials {
+    $root: &;
+    &__wrapper {
+        display: flex;
+        gap: rem(12);
+    }
+
+    &__text {
+        font-size: rem(18);
+        font-weight: 500;
+        color: $color-placeholder;
+        margin: rem(20) 0;
+        opacity: 0.5;
+    }
+}

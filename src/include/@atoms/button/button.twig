@@ -1,0 +1,61 @@
+{% if button.href %}
+	{% if button.href starts with '#' and button.href|length > 2 %}
+		<span data-anchor-id={{button.href|slice(1)}} class="button{% if button.theme %} button--{{ button.theme }}{% endif %}{% if button.fit %} button--fit{% endif %}{% if button.disabled %} button--disabled{% endif %}{% if button.loading %} button--loading{% endif %}{% if button.size %} button--{{ button.size }}{% endif %}" {% if button.attr %} {{ button.attr }} {% endif %} {% if button.title %} title="{{ button.title }}" {% endif %} {% if button.tip %} data-tip data-tip-content="{{ button.tip }}" {% endif %}>
+			{% if button.icon %}
+				<span class="button__icon">
+					{% view '@icon' with {icon: button.icon} %}
+				</span>
+			{% endif %}
+
+			{% if button.text %}
+				<span class="button__text">
+					{{button.text}}
+				</span>
+			{% endif %}
+		</span>
+	{% else %}
+		<a href="{{button.href}}" class="button{% if button.theme %} button--{{ button.theme }}{% endif %}{% if button.fit %} button--fit{% endif %}{% if button.disabled %} button--disabled{% endif %}{% if button.loading %} button--loading{% endif %}{% if button.size %} button--{{ button.size }}{% endif %}" {% if button.attr %} {{ button.attr }} {% endif %} {% if button.title %} title="{{ button.title }}" {% endif %} {% if button.tip %} data-tip data-tip-content="{{ button.tip }}" {% endif %} {% if button.external %} target="_blank" rel="nofollow" {% endif %}>
+			{% if button.icon %}
+				<span class="button__icon">
+					{% view '@icon' with {icon: button.icon} %}
+				</span>
+			{% endif %}
+
+			{% if button.text %}
+				<span class="button__text">
+					{{button.text}}
+				</span>
+			{% endif %}
+		</a>
+	{% endif %}
+{% else %}
+	{% if button.non_interactive %}
+		<div class="button button--non-interactive {% if button.theme %} button--{{ button.theme }}{% endif %}{% if button.fit %} button--fit{% endif %}{% if button.loading %} button--loading{% endif %}{% if button.size %} button--{{ button.size }}{% endif %}" {% if button.attr %} {{ button.attr }} {% endif %} {% if button.title %} title="{{ button.title }}" {% endif %} {% if button.disabled %} disabled {% endif %} {% if button.tip %} data-tip data-tip-content="{{ button.tip }}" {% endif %}>
+			{% if button.icon %}
+				<span class="button__icon">
+					{% view '@icon' with {icon: button.icon} %}
+				</span>
+			{% endif %}
+
+			{% if button.text %}
+				<span class="button__text">
+					{{button.text}}
+				</span>
+			{% endif %}
+		</div>
+	{% else %}
+		<button type="{{ button.type?: 'button' }}" class="button{% if button.theme %} button--{{ button.theme }}{% endif %}{% if button.fit %} button--fit{% endif %}{% if button.loading %} button--loading{% endif %}{% if button.size %} button--{{ button.size }}{% endif %}" {% if button.attr %} {{ button.attr }} {% endif %} {% if button.title %} title="{{ button.title }}" {% endif %} {% if button.disabled %} disabled {% endif %} {% if button.url %} data-modal="{{ button.url }}" {% endif %} {% if button.tip %} data-tip data-tip-content="{{ button.tip }}" {% endif %}>
+			{% if button.icon %}
+				<span class="button__icon">
+					{% view '@icon' with {icon: button.icon} %}
+				</span>
+			{% endif %}
+
+			{% if button.text %}
+				<span class="button__text">
+					{{button.text}}
+				</span>
+			{% endif %}
+		</button>
+	{% endif %}
+{% endif %}

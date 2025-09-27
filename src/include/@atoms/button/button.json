@@ -1,0 +1,8 @@
+{
+  "button": {
+    "text": "button default",
+    "icon": {
+      "name": "24/search"
+    }
+  }
+}

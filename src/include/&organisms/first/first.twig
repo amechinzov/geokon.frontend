@@ -1,0 +1,23 @@
+<div class="first" {% if block.background %} style="background-image: url('{{ block.background.src }}')" {% endif %}>
+    <div class="container">
+        <div class="first__content">
+            {% if block.socials %}
+                <div class="first__socials">
+                    {% view '&socials' with {block:block.socials} %}
+                </div>
+            {% endif %}
+
+            {% if block.title %}
+                <h1 class="first__title">
+                    {{ block.title }}
+                </h1>
+            {% endif %}
+
+            {% if block.button %}
+                <div class="first__button">
+                    {% view '@button' with {button: block.button} %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

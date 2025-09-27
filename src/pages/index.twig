@@ -1,0 +1,26 @@
+{% extends "../include/layout/default.twig" %}
+
+{% block content %}
+
+	<h1>{{ title }}</h1>
+
+	{% for group in pages %}
+		<div class="index-page__group">
+			{% if group.title %}
+				<h2>{{ group.title }}</h2>
+			{% endif %}
+			<ul class="index-page__list">
+				{% for page in group.items %}
+					<li class="index-page__item">
+						{% if page.href %}
+							<a href="/{{ page.href }}">{{ page.text }}</a>
+						{% else %}
+							{{ page.text }}
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endfor %}
+
+{% endblock %}

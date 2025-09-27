@@ -1,0 +1,15 @@
+<div class="modal__head">
+    {% if modal.title %}
+        <div class="modal__head-title">
+            {{ modal.title }}
+        </div>
+    {% endif %}
+    {% if modal.text %}
+        <div class="modal__head-text">
+            {{ modal.text }}
+        </div>
+    {% endif %}
+    {% if modal.examples %}
+        {% view '&examples' with {block: modal.examples} %}
+    {% endif %}
+</div>

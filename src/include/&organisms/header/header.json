@@ -1,0 +1,20 @@
+{
+  "header": {
+    "top": [
+      {
+        "href": "mailto:info@mail.ru",
+        "text": "info@mail.ru"
+      },
+      {
+        "href": "#",
+        "icon": {
+          "name": "logos/logo"
+        }
+      },
+      {
+        "href": "tel:+7(999)999-99-99",
+        "text": "+7(999)999-99-99"
+      }
+    ]
+  }
+}

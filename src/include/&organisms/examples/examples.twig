@@ -1,0 +1,15 @@
+<div class="examples">
+    {% if block.title %}
+        <div class="examples__title">
+            {{ block.title }}
+        </div>
+    {% endif %}
+
+    {% if block.items %}
+        <div class="examples__list">
+            {% for item in block.items %}
+                {% view '^example' with {example: item} %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

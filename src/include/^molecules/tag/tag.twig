@@ -1,0 +1,6 @@
+{% if block.text %}
+    <div class="tag tag__theme-{{ block.theme ?: 'default' }}">
+        <div class="tag__circle"></div>
+        <span class="tag__text">{{ block.text }}</span>
+    </div>
+{% endif %}

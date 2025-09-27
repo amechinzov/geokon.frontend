@@ -1,0 +1,5 @@
+<div class="factoids">
+    {% for item in block.items %}
+        {% view '^factoid' with { factoid: item } %}
+    {% endfor %}
+</div>

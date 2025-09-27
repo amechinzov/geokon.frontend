@@ -1,0 +1,18 @@
+.examples {
+  $root: &;
+  margin-top: rem(48);
+
+  &__title {
+    font-family: $font-family-inter;
+    color: $color-primary;
+    font-size: rem(18);
+    font-weight: bold;
+    margin-bottom: rem(24);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16);
+  }
+}

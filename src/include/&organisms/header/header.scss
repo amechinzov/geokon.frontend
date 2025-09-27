@@ -1,0 +1,44 @@
+.header {
+  $root: &;
+
+  display: block;
+
+  &__text {
+    font-size: 12px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin: rem(16) 0;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $color-primary;
+    height: 100%;
+
+    & .icon {
+      margin-right: rem(8);
+    }
+
+    &:hover {
+      color: $color-light-green;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-item {
+      margin: rem(24) rem(48);
+    }
+  }
+}

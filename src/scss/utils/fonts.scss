@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'DMSans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('@/fonts/DMSans/DMSans-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DMSans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('@/fonts/DMSans/DMSans-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DMSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/fonts/DMSans/DMSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DMSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('@/fonts/DMSans/DMSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bebas_Neue';
+  font-style: normal;
+  font-weight: 700;
+  src: url('@/fonts/Bebas_Neue/BebasNeue-Bold.woff') format('woff'), url('@/fonts/Bebas_Neue/BebasNeue-Bold.ttf') format('truetype'), url('@/fonts/Bebas_Neue/BebasNeue-Bold.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Bebas_Neue';
+  font-style: normal;
+  font-weight: 300;
+  src: url('@/fonts/Bebas_Neue/BebasNeue-Light.woff') format('woff'), url('@/fonts/Bebas_Neue/BebasNeue-Light.ttf') format('truetype'), url('@/fonts/Bebas_Neue/BebasNeue-Light.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Bebas_Neue';
+  font-style: normal;
+  font-weight: 100;
+  src: url('@/fonts/Bebas_Neue/BebasNeue-Thin.woff') format('woff'), url('@/fonts/Bebas_Neue/BebasNeue-Thin.ttf') format('truetype'), url('@/fonts/Bebas_Neue/BebasNeue-Thin.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Bebas_Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/fonts/Bebas_Neue/BebasNeue-Regular.woff') format('woff'), url('@/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype'), url('@/fonts/Bebas_Neue/BebasNeue-Regular.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-optical-sizing: auto;
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/fonts/Inter/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-optical-sizing: auto;
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url('@/fonts/Inter/Inter_18pt-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-optical-sizing: auto;
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('@/fonts/Inter/Inter_18pt-Bold.ttf') format('truetype');
+}

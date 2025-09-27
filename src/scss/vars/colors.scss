@@ -1,0 +1,20 @@
+$color-white: #fff;
+$color-white-half: rgba($color-white, 0.5);
+$color-black: #000;
+$color-black-40: rgba($color-black, 0.4);
+$color-black-10: rgba($color-black, 0.1);
+$color-green: #4fb78d;
+$color-light-green: #4fb78d;
+$color-dark-green: #39775e;
+$color-primary: #2a3a33;
+$color-primary-half: #2a3a33b3;
+$color-error: #d42417;
+$color-placeholder: #23283c;
+$color-grey: #f8f9fa;
+$color-dark-grey: #ebedf0;
+$color-border: #e2f1ea;
+
+$colors: (
+  'white': $color-white,
+  'black': $color-black,
+);

@@ -1,0 +1,59 @@
+<section class="screen{% if block.class %} {{ block.class }}{% endif %}{% if block.backgroundFill %} screen__theme-{{ block.backgroundFill }}{% endif %}"
+        {% if attr %} {{ attr }} {% endif %}
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if block.background %} style="background-image: url('{{ block.background.src }}')" {% endif %}
+>
+    <div class="container">
+
+        <div class="screen__heading {% if block.theme %} screen__heading-{{ block.theme }}{% endif %}">
+            {% if block.tag %}
+                {% view '^tag' with { block: block.tag|merge({ theme: block.backgroundFill }) } %}
+            {% endif %}
+            <div class="screen__description">
+
+                {% if block.title %}
+                    <h2 class="screen__title">
+                        {{ block.title }}
+                    </h2>
+                {% endif %}
+                {% if block.text %}
+                    <div class="screen__text">
+                        {{ block.text }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="screen__content">
+            {% if block.factoids %}
+                {% view '&factoids' with { block: block.factoids } %}
+            {% endif %}
+
+            {% if block.bullets %}
+                {% view '&bullets' with { block: block.bullets } %}
+            {% endif %}
+
+            {% if block.image %}
+                <div class="screen__image" style="background-image: url('{{ block.image.src }}')"></div>
+            {% endif %}
+
+            {% if block.layers %}
+                {% view '&layers' with { block: block.layers } %}
+            {% endif %}
+
+            {% if block.cards %}
+                {% view '&cards' with { block: block.cards } %}
+            {% endif %}
+
+            {% if block.projects %}
+                {% view '&projects' with { block: block.projects } %}
+            {% endif %}
+
+            {% if block.partners %}
+                {% view '&partners' with { block: block.partners } %}
+            {% endif %}
+
+        </div>
+
+    </div>
+</section>

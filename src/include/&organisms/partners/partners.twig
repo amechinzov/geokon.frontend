@@ -1,0 +1,7 @@
+<div class="partners">
+    {% if block.items %}
+        {% for item in block.items %}
+            <div class="partners__item" style="background-image: url('{{ item.src }} ')"> </div>
+        {% endfor %}
+    {% endif %}
+</div>

@@ -1,0 +1,26 @@
+<div class="projects">
+    {% if block.filter %}
+        <div class="filters">
+            {% view '@filter' with { block: block.filter } %}
+        </div>
+    {% endif %}
+
+    {% if block.items %}
+        <div class="projects__list">
+            {% for item in block.items %}
+                {% view '^project' with { project: item } %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <div {{ block.paginationAttr }}>
+        {% if block.pagination %}
+            <div class="projects__pagination" data-app-animate data-animate data-fade-in-up data-delay="0.3">
+                {% view '^pagination' with {
+                    pagination: block.pagination
+                } %}
+            </div>
+        {% endif %}
+    </div>
+</div>

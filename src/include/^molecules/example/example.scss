@@ -1,0 +1,4 @@
+.example {
+  @include image-div;
+  width: calc(33% - 16px)
+}

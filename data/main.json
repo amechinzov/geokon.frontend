@@ -1,0 +1,501 @@
+{
+  "title": "Main",
+  "header": {
+    "top": [
+      {
+        "href": "mailto:info@mail.ru",
+        "text": "info@mail.ru",
+        "icon": {
+          "name": "16/mail"
+        }
+      },
+      {
+        "href": "#",
+        "image": {
+          "logo": true,
+          "src": "/img/logo.png",
+          "alt": "logo"
+        }
+      },
+      {
+        "href": "tel:+7(999)999-99-99",
+        "text": "+7(999)999-99-99",
+        "icon": {
+          "name": "16/phone"
+        }
+      }
+    ],
+    "menu": [
+      {
+        "text": "Услуги",
+        "href": "#"
+      },
+      {
+        "text": "Проекты",
+        "href": "#"
+      },
+      {
+        "text": "О компании",
+        "href": "#"
+      },
+      {
+        "text": "Команда",
+        "href": "#"
+      },
+      {
+        "text": "Вакансии",
+        "href": "#"
+      },
+      {
+        "text": "Контакты",
+        "href": "#"
+      }
+    ]
+  },
+  "first": {
+    "title": "BIM-проектирование\nзданий",
+    "button": {
+      "text": "Разместить заказ",
+      "href": "#"
+    },
+    "background": {
+      "src": "/img/background/first.jpg",
+      "alt": "background"
+    },
+    "socials": {
+      "text": "Свяжитесь с нами",
+      "items": [
+        {
+          "href": "#",
+          "icon": {
+            "name": "24/phone"
+          }
+        },
+        {
+          "href": "#",
+          "icon": {
+            "name": "24/telegram"
+          }
+        },
+        {
+          "href": "#",
+          "icon": {
+            "name": "24/mail"
+          }
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "специализируемся на создании информационных моделей зданий (BIM)",
+    "tag": {
+      "text": "О нас"
+    },
+    "text": "<p>Информационные модели позволяют оптимизировать процессы проектирования, строительства и эксплуатации объектов.</p><p>Мы разрабатываем не только новые проекты, но также работаем с объектами реставрации и капитального ремонта.</p>",
+    "bullets": {
+      "title": "Комплексно подходим к каждому проекту и гарантируем:",
+      "items": [
+        {
+          "text": "Единую  координацию всех дисциплин"
+        },
+        {
+          "text": "Снижение рисков и затрат за счет раннего выявления коллизий"
+        },
+        {
+          "text": "Повышение точности и качества проектной документации"
+        },
+        {
+          "text": "Оптимизацию сроков выполнения работ"
+        }
+      ]
+    },
+    "image": {
+      "src": "/img/background/about.jpg",
+      "alt": "about"
+    }
+  },
+  "factoids": {
+    "background": {
+      "src": "/img/background/factoids.png"
+    },
+    "title": "Создаём единое цифровое пространство для строительства",
+    "tag": {
+      "text": "Мы в цифрах"
+    },
+    "factoids": {
+      "items": [
+        {
+          "number": "150+",
+          "text": "клиентов"
+        },
+        {
+          "number": "200",
+          "text": "проектов"
+        },
+        {
+          "number": "10",
+          "text": "лет на рынке"
+        },
+        {
+          "number": "150+",
+          "text": "клиентов"
+        },
+        {
+          "number": "200",
+          "text": "проектов"
+        },
+        {
+          "number": "10",
+          "text": "лет на рынке"
+        }
+      ]
+    }
+  },
+  "product": {
+    "title": "выполняем полный цикл проектных услуг, охватывая все этапы — от концепции до рабочей документации",
+    "text": "Наш подход гарантирует слаженность процессов, минимизацию ошибок и максимальную эффективность на каждом этапе реализации проекта.",
+    "tag": {
+      "text": "Комплексное проектирование"
+    },
+    "layers": {
+      "items": [
+        {
+          "image": {
+            "src": "/img/layers/layer1.jpg",
+            "alt": "product"
+          },
+          "title": "Водоснабжение и канализация"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer2.jpg",
+            "alt": "product"
+          },
+          "title": "Отопление, вентиляция и кондиционирование"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer1.jpg",
+            "alt": "product"
+          },
+          "title": "Электроснабжение и электрооборудование"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer2.jpg",
+            "alt": "product"
+          },
+          "title": "Слаботочные системы"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer1.jpg",
+            "alt": "product"
+          },
+          "title": "Газоснабжение"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer2.jpg",
+            "alt": "product"
+          },
+          "title": "Противопожарные системы"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer1.jpg",
+            "alt": "product"
+          },
+          "title": "Системы автоматизации и диспетчеризации"
+        },
+        {
+          "image": {
+            "src": "/img/layers/layer2.jpg",
+            "alt": "product"
+          },
+          "title": "Наружные инженерные сети"
+        }
+      ]
+    },
+    "theme": "left"
+  },
+  "services": {
+    "title": "Берем на себя все функции разработки, необходимые для успешной реализации проекта",
+    "tag": {
+      "text": "Услуги"
+    },
+    "cards": {
+      "items": [
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/1.png",
+            "alt": "service"
+          },
+          "title": "Системы водоснабжения и&nbsp;канализации"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/2.png",
+            "alt": "service"
+          },
+          "title": "Системы отопления, вентиляции и&nbsp;кондиционирования"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/3.png",
+            "alt": "service"
+          },
+          "title": "Электроснабжение и&nbsp;электрооборудование"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/4.png",
+            "alt": "service"
+          },
+          "title": "Слаботочные системы"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/5.png",
+            "alt": "service"
+          },
+          "title": "Газоснабжение"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/6.png",
+            "alt": "service"
+          },
+          "title": "Противопожарные системы"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/7.png",
+            "alt": "service"
+          },
+          "title": "Системы автоматизации и&nbsp;диспетчеризации"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/8.png",
+            "alt": "service"
+          },
+          "title": "Наружные инженерные сети"
+        },
+        {
+          "link": "/ajax/ajax-modal.html",
+          "image": {
+            "src": "/img/services/9.png",
+            "alt": "service"
+          },
+          "title": "Архитектурные проекты"
+        }
+      ]
+    },
+    "theme": "left"
+  },
+  "projects": {
+    "title": "Реализованные проекты",
+    "tag": {
+      "text": "Проекты"
+    },
+    "projects": {
+      "filter": {
+        "items": [
+          {
+            "text": "Все проекты",
+            "value": "all"
+          },
+          {
+            "text": "Вентиляция",
+            "value": "ventilation"
+          },
+          {
+            "text": "Отопление",
+            "value": "heating"
+          },
+          {
+            "text": "Электроснабжение",
+            "value": "electro"
+          },
+          {
+            "text": "Водоснабжение",
+            "value": "water"
+          },
+          {
+            "text": "Слаботочные системы",
+            "value": "sewage"
+          },
+          {
+            "text": "Дымоудаление",
+            "value": "desmoking"
+          }
+        ]
+      },
+      "items": [
+        {
+          "image": {
+            "src": "/img/projects/1.jpg"
+          },
+          "title": "Проект 1",
+          "tags": [
+            "Вентиляция"
+          ],
+          "description": "Описание проекта",
+          "href": "/ajax/ajax-modal-project.html",
+          "link": "Подробнее"
+        },
+        {
+          "image": {
+            "src": "/img/projects/1.jpg"
+          },
+          "title": "Проект 1",
+          "tags": [
+            "Вентиляция"
+          ],
+          "description": "Описание проекта",
+          "href": "/ajax/ajax-modal-project.html",
+          "link": "Подробнее"
+        },
+        {
+          "image": {
+            "src": "/img/projects/1.jpg"
+          },
+          "title": "Проект 1",
+          "tags": [
+            "Вентиляция"
+          ],
+          "description": "Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3Описание проекта 3",
+          "href": "/ajax/ajax-modal-project.html",
+          "link": "Подробнее"
+        },
+        {
+          "image": {
+            "src": "/img/projects/1.jpg"
+          },
+          "title": "Проект 4",
+          "tags": [
+            "Вентиляция"
+          ],
+          "description": "Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4Описание проекта 4",
+          "href": "/ajax/ajax-modal-project.html",
+          "link": "Подробнее"
+        }
+      ],
+      "pagination": {
+        "showMore": {
+          "text": "Загрузить все проекты",
+          "attr": "data-modal=\"modal-projects\""
+        }
+      }
+    },
+    "theme": "left"
+  },
+  "howWeWork": {
+    "title": "Интегрируем все этапы проектирования, от концепции до реализации",
+    "tag": {
+      "text": "Как мы работаем"
+    },
+    "cards": {
+      "class": "howWeWork",
+      "items": [
+        {
+          "icon": {
+            "name": "110/phone"
+          },
+          "title": "Заявка",
+          "text": "Оставьте заявку или позвоните нам"
+        },
+        {
+          "icon": {
+            "name": "110/consultation"
+          },
+          "title": "Консультация",
+          "text": "Специалист ознакомится с задачей \nи подробно проконсультирует вас"
+        },
+        {
+          "icon": {
+            "name": "110/contract"
+          },
+          "title": "Договор",
+          "text": "Утверждаем стоимость и сроки работ, оформляем договор"
+        },
+        {
+          "icon": {
+            "name": "110/architectural-design"
+          },
+          "title": "Проектирование",
+          "text": "Мы разрабатываем пакет документации  согласно всем требованиям и сами проходим процесс согласования"
+        },
+        {
+          "icon": {
+            "name": "110/project-result"
+          },
+          "title": "Результат",
+          "text": "Вы получаете пакет разработанной \nи согласованной документации"
+        },
+        {
+          "icon": {
+            "name": "110/help-center"
+          },
+          "title": "Поддержка",
+          "text": "После сдачи проекта мы осуществляем авторский надзор и вносим необходимые корректировки"
+        }
+      ]
+    },
+    "theme": "left"
+  },
+  "partners": {
+    "title": "Индивидуальный подход и высокий уровень экспертизы — основа доверия",
+    "tag": {
+      "text": "Нам доверяют"
+    },
+    "partners": {
+      "items": [
+        {
+          "src": "/img/partners/1.png"
+        },
+        {
+          "src": "/img/partners/2.png"
+        },
+        {
+          "src": "/img/partners/1.png"
+        },
+        {
+          "src": "/img/partners/2.png"
+        },
+        {
+          "src": "/img/partners/1.png"
+        },
+        {
+          "src": "/img/partners/2.png"
+        },
+        {
+          "src": "/img/partners/1.png"
+        },
+        {
+          "src": "/img/partners/2.png"
+        }
+      ]
+    },
+    "theme": "left"
+  },
+  "people": {
+    "title": "В любой работе главное - это люди",
+    "tag": {
+      "text": "Вакансии"
+    },
+    "text": "Для своих сотрудников мы предлагаем полный соц. пакет, официальное трудоустройство и конкурентную заработную плату. "
+  },
+  "footer": {
+    "text": "footer 22"
+  }
+}

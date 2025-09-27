@@ -1,0 +1,5 @@
+{% if image.mob or image.tab %}
+	{% view '@image-adaptive' with {image_adaptive: image} %}
+{% else %}
+	{% view '@image-regular' with {image: image} %}
+{% endif %}

@@ -1,0 +1,14 @@
+{
+  "title": "geokon",
+  "pages": [
+    {
+      "title": "Страницы",
+      "items": [
+        {
+          "text": "Главная",
+          "href": "main.html"
+        }
+      ]
+    }
+  ]
+}

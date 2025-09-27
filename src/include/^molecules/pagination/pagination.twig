@@ -1,0 +1,55 @@
+{% set actionMerge = {
+    size: "xl",
+    fit: true,
+    icon: {
+        name: "24/plus"
+    }
+} %}
+
+{% set arrowTheme = 'white' %}
+
+{% if paginaion.theme %}
+	{% set arrowTheme = paginaion.theme %}
+{% endif %}
+
+{% set prevHref = null %}
+{% set nextHref = null %}
+
+{% if pagination.prev.href %}
+	{% set prevHref = pagination.prev.href %}
+{% endif %}
+
+{% if pagination.next.href %}
+	{% set nextHref = pagination.next.href %}
+{% endif %}
+
+{% set prevAttr = null %}
+{% set nextAttr = null %}
+
+{% if pagination.prev.attr %}
+	{% set prevAttr = pagination.prev.attr %}
+{% endif %}
+
+{% if pagination.next.attr %}
+	{% set nextAttr = pagination.next.attr %}
+{% endif %}
+
+<div class="pagination" {% if pagination.attr %} {{ pagination.attr }} {% endif %}>
+	<div class="pagination__container container">
+		{% if pagination.count %}
+			<div class="pagination__count">{{ pagination.count }}</div>
+		{% endif %}
+
+		{% if pagination.showMore %}
+			<div class="pagination__action">
+				{% view '@button' with {button: pagination.showMore|merge(actionMerge)} %}
+			</div>
+		{% endif %}
+
+		<div class="pagination__nav">
+			{% if pagination.pageCounter %}
+				{% view '@nav-arrows' with {nav_arrows: {theme: arrowTheme, text: pagination.pageCounter, pagination: true, prevHref: prevHref, nextHref: nextHref, prevAttr: prevAttr, nextAttr: nextAttr }} %}
+			{% endif %}
+		</div>
+	</div>
+</div>

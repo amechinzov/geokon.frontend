@@ -1,0 +1,12 @@
+<div class="layers">
+    <div class="layers__images">
+        {% for key,item in block.items %}
+            <div class="layers__images-image" data-index="{{ key }}" style="background-image: url('{{ item.image.src }}')"></div>
+        {% endfor %}
+    </div>
+    <div class="layers__content">
+        {% for key,item in block.items %}
+            <div class="layers__content-item" data-index="{{ key }}">{{ item.title }}</div>
+        {% endfor %}
+    </div>
+</div>

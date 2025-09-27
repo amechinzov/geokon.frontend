@@ -1,0 +1,13 @@
+.partners {
+  $root: &;
+  @include grid-columns(4);
+  row-gap: rem(32);
+
+  &__item {
+    @include image-div;
+    height: rem(120);
+    width: 100%;
+    grid-column: 3 / 3;
+
+  }
+}

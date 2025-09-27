@@ -1,0 +1,16 @@
+.factoid {
+  float: left;
+  width: 33%;
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  font-size: rem(32);
+  margin-bottom: rem(32);
+
+  &__number {
+    font-family: $font-family-bebas;
+    font-weight: bold;
+    font-size: rem(100);
+    margin-right: rem(20);
+  }
+}

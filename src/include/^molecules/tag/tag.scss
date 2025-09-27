@@ -1,0 +1,43 @@
+.tag {
+  $root: &;
+
+  display: inline-flex;
+  font-weight: 600;
+
+  &__circle {
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    margin-right: rem(8);
+  }
+
+  &__theme-white {
+    #{$root}__circle {
+      background-color: $color-green;
+    }
+
+    #{$root}__text {
+      color: $color-primary;
+    }
+  }
+
+  &__theme-grey {
+    #{$root}__circle {
+      background-color: $color-green;
+    }
+
+    #{$root}__text {
+      color: $color-primary;
+    }
+  }
+
+  &__theme-green {
+    #{$root}__circle {
+      background-color: $color-white;
+    }
+
+    #{$root}__text {
+      color: $color-white-half;
+    }
+  }
+}
