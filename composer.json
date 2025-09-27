@@ -4,5 +4,6 @@
   "license": "MIT",
   "require": {},
   "minimum-stability": "dev",
-  "homepage": "https://github.com/amechinzov/geokon.frontend.twig"
+  "homepage": "https://github.com/amechinzov/geokon.frontend.twig",
+  "type": "twig-module"
 }
