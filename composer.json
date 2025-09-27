@@ -2,5 +2,7 @@
   "name": "amechinzov/geokon.frontend.twig",
   "description": "frontend twig repo geokon",
   "license": "MIT",
-  "require": {}
+  "require": {},
+  "minimum-stability": "dev",
+  "homepage": "https://github.com/amechinzov/geokon.frontend.twig"
 }
