@@ -104,6 +104,12 @@
   background-size: cover;
 }
 
+@mixin pointerCoarse {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
 @mixin grid-columns($columns) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);

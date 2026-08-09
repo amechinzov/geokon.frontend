@@ -1,0 +1,10 @@
+<form action="{{ form.action }}" method="{{ form.method ?? 'post' }}">
+	{% if form.title %}
+		<h3 class="form__title">{{ form.title }}</h3>
+	{% endif %}
+	{% if form.fields %}
+		{% for field in form.fields %}
+			{% view '@input' with {input: field} %}
+		{% endfor %}
+	{% endif %}
+</form>

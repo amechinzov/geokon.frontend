@@ -1,5 +1,42 @@
 {
   "footer": {
-    "text": "footer"
+    "title": "BIM-проектирование зданий",
+    "socials": [
+      { "href": "#", "icon": "24/telegram" },
+      { "href": "#", "icon": "24/mail" }
+    ],
+    "menu": {
+      "title": "Разделы",
+      "items": [
+        { "text": "Услуги", "href": "#" },
+        { "text": "Проекты", "href": "#" },
+        { "text": "О компании", "href": "#" },
+        { "text": "Cистемы", "href": "#" },
+        { "text": "Как мы работаем", "href": "#" },
+        { "text": "Команда", "href": "#" }
+      ]
+    },
+    "contacts": {
+      "title": "Контакты",
+      "address": "г.Уфа, Улица, Офис",
+      "workHours": "Время работы:\nc 08:00 - 18:00"
+    },
+    "logo": {
+      "src": "/img/logo.png",
+      "alt": "logo"
+    },
+    "bigEmail": {
+      "href": "mailto:info@mail.ru",
+      "text": "info@mail.ru"
+    },
+    "bigPhone": {
+      "href": "tel:+80000000000",
+      "text": "8 (000) 000 00 00"
+    },
+    "copyright": "Компания ГЕОКОН. Все права защищены",
+    "privacy": {
+      "text": "Политика конфиденциальности",
+      "href": "#"
+    }
   }
 }

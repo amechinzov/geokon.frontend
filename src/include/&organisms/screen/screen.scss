@@ -9,13 +9,13 @@
 
     #{$root}__description {
       display: flex;
-      padding: rem(60) 0 rem(136) 0;
+      padding: rem(60) 0 rem(80) 0;
     }
 
     #{$root}__title {
       width: 65%;
       padding-right: 15%;
-      font-size: rem(60);
+      font-size: rem(56);
       line-height: 72px;
       font-family: $font-family-bebas;
     }
@@ -30,16 +30,34 @@
       }
     }
 
+    &-under {
+      #{$root}__description {
+        width: columns12(6);
+        flex-direction: column;
+        padding: rem(60) 0 rem(40) 0;
+
+        #{$root}__title {
+          width: 100%;
+          padding-right: 35%;
+        }
+
+        #{$root}__text {
+          width: 100%;
+          width: columns(4, 5);
+        }
+      }
+    }
+
     &-left {
       flex-wrap: wrap;
       flex-direction: row;
 
       .tag {
-        width: calc(100% / 12 * 5);
+        width: columns12(5);
       }
 
       #{$root}__description {
-        width: calc(100% / 12 * 7);
+        width: columns12(7);
         flex-direction: column;
         padding-top: 0;
 
@@ -50,7 +68,7 @@
 
         #{$root}__text {
           margin-top: rem(32);
-          width: calc(100% / 7 * 4);
+          width: columns(4, 7);
         }
       }
 

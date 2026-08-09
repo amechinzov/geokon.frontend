@@ -1,0 +1,296 @@
+$i-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8 4.5L3.66987 9H12.3301L8 4.5Z' fill='%23333C43'/%3E%3C/svg%3E");
+
+.select-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &.with-arrow {
+    background-color: $color-white;
+    padding: rem(10) rem(16);
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(16) rem(11);
+    }
+
+    @include media-breakpoint-up(md) {
+      min-width: rem(182);
+      padding-right: rem(15);
+    }
+
+    @at-root & .select2-container--open {
+      .select2-selection__arrow {
+        &:after {
+          transform: rotate(0deg) translateY(rem(1.5));
+        }
+      }
+    }
+  }
+}
+
+select.select {
+  display: block;
+  width: 100%;
+  height: rem(46);
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  @include text-default;
+  @include defaultTransition(color, border-color, background);
+
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select2-hidden-accessible {
+  @include visually-hidden;
+}
+
+.select2-container {
+  $root: &;
+
+  position: relative;
+  display: inline-block;
+  min-width: rem(170);
+  @include text-default;
+
+  @at-root .with-arrow & {
+    min-width: auto;
+  }
+
+  &--open &--translucent {
+    top: rem(40);
+  }
+
+  &--translucent {
+    left: 0 !important;
+    min-width: auto;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      min-width: rem(182);
+    }
+
+    .select2-dropdown {
+			box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.15);
+
+      margin-top: rem(20);
+    }
+
+    .select2-results__option {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.select2-selection {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0 0 0 rem(8);
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  @include text-default;
+  @include defaultTransition(color, border-color, background, height);
+
+  &:focus {
+    outline: none;
+  }
+
+  @at-root select.select--outline-none~.select2 & {
+    border: 0;
+  }
+
+  @at-root .select2-container.select2-container--disabled & {
+    cursor: default;
+  }
+
+  @at-root .with-arrow & {
+    gap: rem(4);
+    padding: 0;
+  }
+
+  &__rendered {
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $color-white;
+    @include text-default;
+    @include defaultTransition(color);
+
+    .select2-prefix {
+      @include defaultTransition(opacity);
+    }
+
+    @at-root .with-arrow & {
+      text-align: left;
+    }
+
+    @include hover {
+      color: $color-white;
+    }
+  }
+
+  &__placeholder {
+    position: relative;
+    color: $color-white;
+    @include defaultTransition(color);
+
+    @at-root .select2-container.select2-container--disabled & {
+      color: $color-white;
+    }
+  }
+
+  &__arrow {
+    @include visually-hidden;
+
+    @at-root .with-arrow & {
+      position: relative;
+      flex-shrink: 0;
+      width: rem(16);
+      height: rem(16);
+      margin: auto;
+      clip: inherit;
+      overflow: visible;
+
+      &:after {
+        content: '';
+        background-image: $i-arrow;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        width: rem(16);
+        height: rem(16);
+        transform: rotate(180deg);
+        @include defaultTransition(transform);
+
+        @include media-breakpoint-only(md) {
+          padding: rem(2);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.select2-dropdown {
+  $root: &;
+
+  position: absolute;
+  z-index: 9999;
+  display: block;
+  width: 100%;
+  border: 0;
+  margin-top: rem(8);
+  background-color: $color-white;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: rem(12);
+  }
+
+  &--above {
+    margin-top: rem(-8) !important;
+  }
+}
+
+.select2-search--dropdown.select2-search--hide {
+  display: none;
+}
+
+.select2-results {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-height: rem(211);
+  padding: 0;
+  margin: 0;
+
+  &__options {
+    position: relative;
+    display: block;
+    max-height: rem(211);
+    color: $color-white;
+    margin: 0 !important;
+
+    .ps__rail-y {
+      right: rem(2) !important;
+
+      &:before {
+        width: rem(4);
+        top: rem(4);
+        bottom: rem(4);
+      }
+    }
+
+    .ps__thumb-y {
+      &:before {
+        top: rem(4);
+        bottom: rem(4);
+      }
+    }
+
+		&.hovered {
+			.select2-results__option:not(.hovered) {
+				color: $color-white;
+			}
+		}
+  }
+
+  &__option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: rem(16) rem(22);
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    word-break: break-word;
+    @include text-default;
+    @include defaultTransition(background-color, color);
+
+    &--highlighted,
+    &--selected {
+      color: $color-white;
+    }
+
+    &--selected {
+      @include visually-hidden;
+    }
+
+    &--disabled {
+      display: none;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(8);
+    }
+
+		&.hovered {
+			color: $color-white;
+		}
+  }
+}

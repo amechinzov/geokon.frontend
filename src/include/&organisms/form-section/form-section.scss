@@ -1,0 +1,74 @@
+.section__form {
+  $root: &;
+  min-height: 100vh;
+  @include image-div;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url("/img/background/form.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: rem(150) rem(533) rem(146) rem(533);
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &__title {
+    text-align: center;
+    color: $color-white;
+    font-size: rem(56);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: rem(24);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: rem(10);
+  }
+
+  &__orLine {
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: rem(24);
+    font-weight: 600;
+    margin-top: rem(28);
+    margin-bottom: rem(32);
+    text-align: center;
+    font-family: $font-family-bebas;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: calc(50% - rem(48));
+      top: 50%;
+      left: 0;
+      border-top: 1px solid $color-white-half;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: calc(50% - rem(48));
+      top: 50%;
+      right: 0;
+      border-top: 1px solid $color-white-half;
+    }
+  }
+}

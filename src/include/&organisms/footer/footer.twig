@@ -1,5 +1,75 @@
 <footer class="footer">
-	{% if footer.text %}
-		{{ footer.text }}
-	{% endif %}
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__left">
+                {% if footer.title %}
+                    <h2 class="footer__title">{{ footer.title }}</h2>
+                {% endif %}
+                {% if footer.socials %}
+                    <div class="footer__socials">
+                        {% for social in footer.socials %}
+                            <a href="{{ social.href }}" class="footer__social" target="_blank" rel="noopener">
+                                {% view '@icon' with { icon: { name: social.icon } } %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if footer.menu %}
+                <div class="footer__menu">
+                    <div class="footer__menu-title">{{ footer.menu.title }}</div>
+                    <nav class="footer__menu-list">
+                        {% for item in footer.menu.items %}
+                            <a href="{{ item.href }}" class="footer__menu-link">{{ item.text }}</a>
+                        {% endfor %}
+                    </nav>
+                </div>
+            {% endif %}
+
+            {% if footer.contacts %}
+                <div class="footer__contacts">
+                    <div class="footer__contacts-title">{{ footer.contacts.title }}</div>
+                    <div class="footer__contacts-list">
+                        {% if footer.contacts.address %}
+                            <div class="footer__contacts-item">{{ footer.contacts.address }}</div>
+                        {% endif %}
+                        {% if footer.contacts.workHours %}
+                            <div class="footer__contacts-item">{{ footer.contacts.workHours|nl2br }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if footer.logo %}
+                <div class="footer__logo">
+                    <a href="{{ footer.socials[0].href }}" class="footer__logo-icon" target="_blank" rel="noopener">
+                        {% view '@icon' with { icon: { name: '24/telegram' } } %}
+                    </a>
+                    <a href="{{ footer.socials[1].href }}" class="footer__logo-icon" target="_blank" rel="noopener">
+                        {% view '@icon' with { icon: { name: '24/mail' } } %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="footer__big-contacts">
+            {% if footer.bigEmail %}
+                <a href="{{ footer.bigEmail.href }}" class="footer__big-link">{{ footer.bigEmail.text }}</a>
+            {% endif %}
+            {% if footer.bigPhone %}
+                <a href="{{ footer.bigPhone.href }}" class="footer__big-link">{{ footer.bigPhone.text }}</a>
+            {% endif %}
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                <span>{{ "now"|date("Y") }}</span>
+                <span>{{ footer.copyright }}</span>
+            </div>
+            {% if footer.privacy %}
+                <a href="{{ footer.privacy.href }}" class="footer__privacy">{{ footer.privacy.text }}</a>
+            {% endif %}
+        </div>
+    </div>
 </footer>

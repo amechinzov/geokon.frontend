@@ -1,0 +1,56 @@
+.people {
+  $root: &;
+  @include grid-columns(2);
+  row-gap: rem(32);
+  width: 100%;
+
+  .vacancies {
+    $vacancies: &;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+
+    &__item{
+      border-top: 1px solid $color-primary;
+      padding: rem(20) 0;
+    }
+    &__item:last-child{
+      border-bottom: 1px solid $color-primary;
+    }
+  }
+
+  .outerLinks{
+    padding-left: 33%;
+    &__text{
+      padding: rem(20) 0;
+    }
+    &__buttons{
+      &-item {
+        min-width: rem(150);
+        float: left;
+        margin-right: rem(10);
+      }
+    }
+    &__images {
+      display: flex;
+      margin-bottom: rem(20);
+
+      &-item {
+        @include image-div;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        float: left;
+        margin-left: -20px;
+        border: 6px solid $color-dark-green;
+      }
+    }
+  }
+
+  &__item {
+    @include image-div;
+    height: rem(300);
+    width: rem(362);
+
+  }
+}

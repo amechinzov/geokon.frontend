@@ -1,0 +1,15 @@
+<div class="textarea-shell">
+	<textarea{% if field.id %} id="{{ field.id }}"{% endif %} data-ps="container"
+			  class="textarea{% if field.theme %} textarea--{{ field.theme }}{% endif %}{% if field.class %} {{ field.class }}{% endif %}" {% if field.maxlength %} maxlength="{{ field.maxlength }}"{% endif %}
+			  name="{{ field.name }}"{% if field.attr %} {{ field.attr }}{% endif %}
+		{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}
+		{% if field.disabled %} disabled{% endif %}
+		{% if field.readonly %} readonly{% endif %}
+		{% if field.required %} required{% endif %}
+		{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %} rows="1"></textarea>
+	{% if field.required and field.placeholder %}
+		<div class="textarea-placeholder-hidden"><span>{{ field.placeholder }}</span></div>
+	{% endif %}
+	<span class="textarea-shell__border">
+	</span>
+</div>

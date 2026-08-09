@@ -1,0 +1,19 @@
+<div class="input-shell{{ field.theme ? ' '~field.theme : '' }}{{ field.disabled ? " disabled" : "" }}">
+	<div class="input-shell__inner">
+		<input{% if field.id %} id="{{ field.id }}"{% endif %}
+			type="{{ field.type?: 'text' }}"
+			class="input{% if field.class %} {{ field.class }}{% endif %}{% if field.theme %} input--{{ field.theme }}{% endif %}"
+			{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}
+			{% if field.name %} name="{{ field.name }}"{% endif %}{% if field.pattern %} pattern="{{ field.pattern }}"{% endif %}
+			{% if field.type == 'tel' %}data-mask-tel {% if field.pattern %} pattern="{{ field.pattern|raw }}"{% else %} pattern="/^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/" {% endif %}{% endif %}
+			{% if field.type == 'email' %}
+				data-parsley-pattern="/^([\w.*-]+@([\w-]+\.)+[\w-]{2,4})?$/"{% endif %}
+			{% if field.attr %} {{ field.attr|raw }}{% endif %}
+			{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% elseif not field.type == 'hidden' %} autocomplete="off"{% endif %}
+			{% if field.disabled %} disabled{% endif %}
+			{% if field.required %} required{% endif %}
+			{% if field.value %} value="{{ field.value }}"{% endif %}
+			{% if field.url %} data-url="{{ field.url }}"{% endif %}
+			{% if field.readonly %} readonly{% endif %} data-parsley-trigger="change">
+	</div>
+</div>

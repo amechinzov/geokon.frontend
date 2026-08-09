@@ -1,0 +1,12 @@
+<div class="select-shell{% if field.required %} select-shell--required{% endif %}{% if field.arrow %} with-arrow{% endif %}">
+	<select {% if field.id %} id="{{ field.id }}" {% endif %} class="select{% if field.class %} {{ field.class }}{% endif %}{% if field.theme %} select--{{ field.theme }}{% endif %}{% if field.multiple %} select--multiple{% endif %}" name="{{ field.name }}" data-select data-select-theme="{{ field.theme ?: '' }}" {% if field.placeholder %} data-select-placeholder="{{ field.placeholder }}" {% endif %} data-no-result="{{ field.noResult ?: 'Ничего не найдено' }}" {% if field.search %} data-select-search="true" {% endif %} {% if field.search_placeholder %} data-search-placeholder="{{ field.search_placeholder }}" {% endif %} {% if field.multiple %} multiple {% endif %} {% if field.required %} required {% endif %} {% if field.disabled %} disabled {% endif %} {% if field.attr %} {{ field.attr }} {% endif %}>
+		{% if field.placeholder and field.multiple != true %}
+			<option label="{{ field.placeholder }}" data-placeholder></option>
+		{% endif %}
+		{% for option in field.options %}
+			<option value="{{ option.value }}" {% if option.selected %} selected {% endif %} {% if option.attr %} {{ option.attr }} {% endif %} {% if option.disabled %} disabled {% endif %} {% if option.href %} data-href="{{ option.href }}" {% endif %}>
+				{{ option.text }}
+			</option>
+		{% endfor %}
+	</select>
+</div>

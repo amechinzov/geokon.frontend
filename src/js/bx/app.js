@@ -1,12 +1,13 @@
 window.GEOKON_LOAD_LIBS = true;
-__webpack_public_path__ = __webpack_public_path__ || '/';
 
-// Файлы начинающиеся с '_' можно импортировать, они не компилируются сами по себе
+const publicPath = import.meta.env.BASE_URL || '/';
+
+// Модули загружаются через ESM import
+import './_common.js';
+import './_ajaxLoadHandler.class.js';
+import './_eventHandlers.js';
+
 const loadModules = () => {
-  require('./_common');
-  require('./_ajaxLoadHandler.class');
-  require('./_eventHandlers');
-
   document.dispatchEvent(new CustomEvent('GEOKON.LibsLoaded'));
 };
 
@@ -14,7 +15,7 @@ const loadModules = () => {
 const asyncLoadJs = (url, onload) => {
   const script = document.createElement('script');
   script.onload = onload;
-  script.src = __webpack_public_path__ + url;
+  script.src = publicPath + url;
   const parentNode = document.querySelector('head');
   parentNode && parentNode.appendChild(script);
 };

@@ -10,40 +10,4 @@
     margin-bottom: rem(72);
     text-transform: uppercase;
   }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__number {
-    font-family: $font-family-bebas;
-    font-size: rem(20);
-    margin-right: rem(20);
-  }
-
-  &__item {
-    position: relative;
-    padding: rem(36) rem(28);
-    display: flex;
-    align-items: baseline;
-    box-sizing: border-box;
-    border-bottom: 1px solid $color-border;
-
-    &:first-child {
-      border-top: 1px solid $color-border;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: rem(20);
-      transform: translateY(-50%);
-      width: rem(12);
-      height: rem(12);
-      border-radius: 50%;
-      background-color: $color-green;
-    }
-  }
 }

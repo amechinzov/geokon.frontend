@@ -1,0 +1,23 @@
+<section class="section__form">
+    <div class="section__form-wrapper">
+        {% if block.title %}
+            <h2 class="section__form__title">{{ block.title }}</h2>
+        {% endif %}
+        {% if block.text %}
+            <div class="section__form__text">{{ block.text }}</div>
+        {% endif %}
+        {% if block.buttons %}
+            <div class="section__form__buttons">
+                {% for button in block.buttons %}
+                    <div class="section__form__buttons-item">
+                        {% view '@button' with {button:button} %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="section__form__orLine">или</div>
+        {% endif %}
+        {% if block.form %}
+            {% view '&form' with {block:block.form} %}
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<fieldset class="file-upload" data-file="{{ field.upload_text }}" data-upload-parent>
+	<input type="file" class="file-upload__input" name="{{ field.name }}" id="{{ field.id }}" data-upload-file {% if field.required %} required {% endif %} {% if field.multiple %} multiple {% endif %} {% if field.max_size %} data-parsley-max-file-size="{{ field.max_size }}" data-size-message="{{ field.error.max_size?: messages.error.max_size }}" {% endif %} {% if field.accept %} accept="{{ field.accept }}" data-parsley-accept="{{ field.accept }}" data-parsley-trigger="change" {% endif %}>
+	<label for="{{ field.id }}" class="file-upload__label" data-upload-label>
+		<span class="file-upload__wrapper" data-upload-wrapper>
+			{% if field.text %}
+				<span class="file-upload__text{% if field.required %} is-required{% endif %}" data-upload-text>
+					{{ field.text }}
+				</span>
+			{% endif %}
+
+			<span class="file-upload__label-icon" data-upload-icon>
+				{% view '@icon' with {
+					icon: {
+						name: "16/attach-2"
+					}
+				} %}
+			</span>
+		</span>
+	</label>
+</fieldset>

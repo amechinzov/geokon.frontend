@@ -1,0 +1,21 @@
+<section class="map">
+    <div id="yandex-map" class="map__container"></div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey={{ block.apikey }}&lang=ru_RU"></script>
+    <script>
+        ymaps.ready(function () {
+            var map = new ymaps.Map('yandex-map', {
+                center: [{{ block.center[0] }}, {{ block.center[1] }}],
+                zoom: {{ block.zoom }}
+            });
+
+            {% if block.placemark %}
+                var placemark = new ymaps.Placemark(
+                    [{{ block.placemark[0] }}, {{ block.placemark[1] }}],
+                    {},
+                    { preset: 'islands#redDotIcon' }
+                );
+                map.geoObjects.add(placemark);
+            {% endif %}
+        });
+    </script>
+</section>

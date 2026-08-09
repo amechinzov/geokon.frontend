@@ -1,19 +1,21 @@
+// jQuery глобал (должен быть первым — до bx модулей)
+import './setup-jquery.js';
+
 // Основной SCSS файл
-import '@/scss/main';
+import '@/scss/main.scss';
 
-const context = require.context('@/include', true, /\.scss$/);
-context.keys().forEach((file) => context(file));
+// Авто-импорт всех SCSS компонентов (замена require.context)
+import.meta.glob('@/include/**/*.scss', { eager: true });
 
-window.$ = window.jQuery = require('jquery');
-
-import './libs';
-import './utils/scroll';
-import './utils/userAgent';
-import './bx/app';
-import modal from './components/modal';
-import filter from './components/filter';
+// Библиотеки и утилиты
+import './libs/index.js';
+import './utils/scroll.js';
+import './utils/userAgent.js';
+import './bx/app.js';
+import modal from './components/modal/index.js';
+import filter from './components/filter/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   modal.init();
   filter.init();
-})
+});

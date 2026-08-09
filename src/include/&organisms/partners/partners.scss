@@ -2,12 +2,12 @@
   $root: &;
   @include grid-columns(4);
   row-gap: rem(32);
+  width: 100%;
 
   &__item {
     @include image-div;
-    height: rem(120);
-    width: 100%;
-    grid-column: 3 / 3;
+    height: rem(300);
+    width: rem(362);
 
   }
 }

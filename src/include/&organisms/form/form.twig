@@ -1,0 +1,73 @@
+<form
+        class="form js-validate {% if block.class %} {{ block.class }}{% endif %}"
+        {% if block.action %} action="{{ block.action }}"{% endif %}
+        {% if block.method %} method="{{ block.method }}"{% endif %}
+        {% if block.name %} name="{{ block.name }}"{% endif %}
+        {% if block.id %} id="{{ block.id }}"{% endif %}
+        novalidate data-parsley-validate
+        {% if block.attr %} {{ block.attr|raw }}{% endif %}
+        {% if block.hasHandler %} data-ajax-form{% endif %}
+        {% if block.modalResponse %} data-has-modal{% endif %}
+        {% if not block.customAnimate %} data-animate{% endif %}>
+
+    {% if block.image %}
+        <div class="form__image">
+            {% view '@image' with {image:block.image} %}
+        </div>
+    {% endif %}
+
+    {% if block.title %}
+        <h3 class="form__title">{{ block.title }}</h3>
+    {% endif %}
+
+    {% if block.fields %}
+        <div class="form__fields">
+            {% for field in block.fields %}
+                <div
+                        {% if not field.customAnimate %} data-scroll data-scroll-class="animate"{% endif %}
+                        class="form__field
+					{% if 'data-search-handler' in field.attr %} has-search{% endif %}
+					{% if field.checkbox %} is-checkbox{% endif %}
+					{% if field.type == 'hidden' %} is-hidden{% endif %}
+					{% if field.select %} is-select{% endif %}
+					{% if field.fields %} is-group{% if field.class %} {{ field.class }}{% endif %}{% endif %}
+					{% if field.class %} {{ field.class }}{% endif %}"
+                        {% if field.checkbox or field.select or field.file or field.fields %}
+                            {% if not field.customAnimate %}
+                                data-animate data-fade-in-up data-delay="{{ (loop.index0 / 10 + 0.3)|round(1, 'floor') }}"
+                            {% endif %}
+                        {% elseif not field.customAnimate %}
+                            data-splitting data-delay="{{ (loop.index0 / 10 + 0.3)|round(1, 'floor') }}"
+                        {% endif %}
+                        {% if field.attr and 'minlength' not in field.attr and 'maxlength' not in field.attr %} {{ field.attr|raw }}{% endif %}
+                        style="--item-index: {{ loop.revindex }}"
+                >
+                    {% view '@field' with {
+                        field: field
+                    } %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if block.submit %}
+        <div class="form__submit {{ block.submit.class }}">
+            <div class="form__action" data-splitting data-delay="1.6">
+                {% view '@button' with {
+                    button: block.submit
+                } %}
+            </div>
+            {% if block.submit.policy %}
+                <div class="form__policy" data-animate data-fade-in-up-text data-delay="1">
+                    {{ block.submit.policy }}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+</form>
+
+{% if block.modalResponse %}
+    <div class="form__response">
+        {% view    '&modal-response' %}
+    </div>
+{% endif %}

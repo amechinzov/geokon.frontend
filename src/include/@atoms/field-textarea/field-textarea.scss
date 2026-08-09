@@ -1,0 +1,131 @@
+.textarea-shell {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 1px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $color-white;
+		opacity: 0;
+		@include defaultTransition(opacity);
+	}
+
+	&:not(.disabled):not(.parsley-error) {
+		@include hover {
+			.textarea {
+				background-size: 0 1px;
+			}
+
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.parsley-error {
+		&:before {
+			background-color: $color-primary;
+		}
+	}
+}
+
+.textarea {
+	$root: &;
+
+	display: block;
+	width: 100%;
+	height: rem(48);
+	min-height: rem(48);
+	padding-top: rem(18);
+	background-color: transparent;
+	color: $color-white;
+	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	@include text-default;
+	resize: vertical;
+	overflow-y: auto;
+	@include line-animate-in($color-white);
+	transition-duration: 1.5s;
+
+	@include media-breakpoint-up(md) {
+		height: rem(56);
+		min-height: rem(56);
+		padding-top: rem(18);
+	}
+
+	&.animate {
+		background-position: 0 100%;
+		background-size: 100% 1px;
+	}
+
+	&.animate.animated {
+		transition-duration: .3s;
+	}
+
+	&:not(:disabled):not(.parsley-error) {
+		@include hover {
+			border-color: $color-white;
+		}
+	}
+
+	&.parsley-error {
+		background-image: linear-gradient($color-primary);
+		border-color: $color-primary;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		@include text-default;
+		color: $color-black-10;
+		padding-left: rem(4);
+		opacity: 0;
+		display: none;
+		transition: opacity .2s;
+
+		@include media-breakpoint-up(md) {
+			width: 60%;
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+
+		&::placeholder {
+			color: $color-black-10;
+		}
+	}
+
+	&~.parsley-errors-list {
+		position: absolute;
+		top: rem(50);
+		@include text-small;
+		color: $color-primary;
+
+		@include media-breakpoint-up(md) {
+			top: rem(56);
+		}
+	}
+
+	&.parsley-error {
+		border-color: $color-primary;
+	}
+
+	&.focusin {
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+}
+
+.textarea-placeholder-hidden {
+	@include visually-hidden;
+}

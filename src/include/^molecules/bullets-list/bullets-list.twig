@@ -1,0 +1,19 @@
+{% if bullets %}
+    <ul class="bullets__list {% if bullets.theme %}bullets__list--{{ bullets.theme }}{% endif %}">
+        {% for index, item in bullets.items %}
+            {% set key = index + 1 %}
+            <li class="bullets__list-item">
+                <div class="bullets__list-number">
+                    {{ key // 10 > 0 ? key : '0' ~ key }}
+                </div>
+                <div class="bullets__list-text">
+                    {% if item.href %}
+                        {% view '@link' with {link:item} %}
+                    {% else %}
+                        {{ item.text }}
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

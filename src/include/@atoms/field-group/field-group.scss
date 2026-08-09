@@ -1,0 +1,389 @@
+.field-group {
+	$root: &;
+	max-width: 100%;
+
+	@include media-breakpoint-only(md) {
+		max-width: calc(100% + #{rem(24)});
+	}
+
+	&.is-radio {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			align-items: center;
+			height: rem(56);
+			padding: rem(4);
+			width: max-content;
+			background-color: $color-white;
+		}
+	}
+
+	&.is-small {
+		height: rem(36);
+		@include media-breakpoint-up(md) {
+			height: rem(36);
+		}
+
+		@include media-breakpoint-down(sm) {
+			background-color: $color-white;
+		}
+	}
+
+	&__inner,
+	&__fields {
+		@at-root .is-radio & {
+			height: 100%;
+		}
+	}
+
+	&__inner {
+		@at-root .is-small & {
+			@include media-breakpoint-down(sm) {
+				display: flex;
+				align-items: center;
+				padding: 0 rem(4);
+			}
+		}
+	}
+
+	&__button {
+		width: 100%;
+		position: relative;
+		display: none;
+
+		.button {
+			width: 100%;
+			background-color: $color-white;
+			justify-content: flex-start;
+			padding: 0 rem(11);
+		}
+
+		.button__text {
+			width: auto;
+		}
+
+		&.is-active {
+			&:after {
+				top: 40%;
+				border-top: none;
+				border-bottom: rem(4) solid $color-white;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			border-left: rem(4) solid transparent;
+			border-right: rem(4) solid transparent;
+			border-top: rem(4) solid $color-white;
+			top: 43%;
+			right: 5%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			display: block;
+		}
+
+		@at-root .is-small & {
+			@include media-breakpoint-down(sm) {
+				@include visually-hidden;
+			}
+		}
+	}
+
+	&__label {
+		color: $color-white;
+		@include h3;
+		display: flex;
+		align-items: center;
+		gap: rem(4);
+		margin-bottom: rem(14);
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	&__fields {
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+
+		@at-root .is-radio & {
+			display: flex;
+
+			@include media-breakpoint-up(md) {
+				gap: rem(4);
+			}
+
+			@include media-breakpoint-down(sm) {
+				position: absolute;
+				margin-bottom: 0;
+				top: rem(56);
+				width: 100%;
+				height: max-content;
+				display: none;
+				flex-direction: column;
+				background-color: $color-white;
+
+				&.is-active {
+					display: flex;
+				}
+			}
+		}
+
+		@at-root .is-small & {
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				top: unset;
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+			}
+		}
+	}
+
+	&__field {
+		@include defaultTransition(background-color);
+
+		&:not(:last-child) {
+			margin-bottom: rem(13);
+
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(15);
+			}
+
+			@at-root .is-radio & {
+				margin-bottom: 0;
+			}
+		}
+
+		.checkbox__text {
+			@include text-default;
+			@include line-clamp(16, 1.2, 1);
+
+			@include media-breakpoint-up(md) {
+				@include line-clamp(16, 1.2, 1);
+			}
+		}
+
+		@at-root .is-radio & {
+			display: flex;
+			align-items: center;
+
+			.field,
+			.field__control,
+			.checkbox.checkbox--radio {
+				display: flex;
+				align-items: center;
+				height: 100%;
+
+				@include media-breakpoint-down(sm) {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.checkbox.checkbox--radio {
+				.checkbox__box {
+					border-color: transparent;
+					background-color: $color-white;
+
+					@include media-breakpoint-up(md) {
+						left: rem(23);
+					}
+				}
+
+				.checkbox__input:checked~.checkbox__box {
+					background-color: $color-white;
+				}
+
+				.checkbox__text {
+					@include text-default;
+					letter-spacing: 0;
+					color: $color-white;
+
+					@include media-breakpoint-down(sm) {
+						width: 100%;
+						height: 100%;
+					}
+
+					@at-root .is-small & {
+						@include text-small;
+					}
+				}
+
+				@include media-breakpoint-up(lg) {
+					@include hover {
+						.checkbox__box {
+							background-color: $color-white;
+						}
+					}
+				}
+
+				@include media-breakpoint-up(md) {
+					margin-left: rem(-26);
+					padding-left: rem(26);
+					margin-right: rem(-26);
+					padding-right: rem(25);
+				}
+			}
+
+			@include media-breakpoint-up(md) {
+				padding: 0 rem(24);
+			}
+
+			@include media-breakpoint-down(sm) {
+				//padding: rem(12) rem(16) rem(13) rem(12);
+				min-height: rem(40);
+
+				.checkbox__box {
+					@include visually-hidden;
+				}
+
+				.checkbox__text {
+					min-height: rem(40);
+					padding: rem(12) rem(16) rem(13) rem(12);
+				}
+			}
+		}
+
+		&:not(.has-checked) {
+			@at-root .is-radio & {
+				@include media-breakpoint-up(lg) {
+					@include hover {
+						background-color: $color-white;
+					}
+				}
+			}
+
+			@at-root .is-radio.is-small & {
+				@include media-breakpoint-up(lg) {
+					@include hover {
+						background-color: $color-white;
+
+						.checkbox.checkbox--radio {
+							.checkbox__text {
+								color: $color-white;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.has-checked {
+			pointer-events: none;
+
+			@at-root .is-radio & {
+				.checkbox.checkbox--radio {
+					.checkbox__text {
+						color: $color-white;
+					}
+				}
+
+				@include media-breakpoint-up(md) {
+					background-color: $color-primary;
+
+					.checkbox.checkbox--radio {
+						.checkbox__text {
+							color: $color-white;
+						}
+
+						.checkbox__input:checked~.checkbox__box {
+							background-color: $color-white;
+						}
+					}
+				}
+			}
+
+			@at-root .is-small & {
+				background-color: $color-white;
+
+				.checkbox.checkbox--radio {
+					.checkbox__text {
+						color: $color-white;
+					}
+				}
+			}
+		}
+
+		@at-root .is-radio.layout-tabs & {
+			@include media-breakpoint-up(md) {
+				padding: 0 rem(16);
+			}
+		}
+
+		@at-root .layout-tabs & {
+			.checkbox__box {
+				@include visually-hidden;
+			}
+
+			.checkbox__text {
+				@include media-breakpoint-up(md) {
+					padding-left: 0;
+				}
+			}
+		}
+
+		@at-root .is-radio.is-small.layout-tabs & {
+			padding: 0;
+
+			.checkbox.checkbox--radio {
+				min-width: rem(27.4);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&:first-child {
+				padding: 0 rem(8);
+			}
+
+			@include media-breakpoint-down(sm) {
+				min-height: rem(32);
+				min-width: rem(32);
+
+				&:first-child {
+					min-width: max-content;
+				}
+
+				.checkbox__text {
+					min-height: unset;
+					padding: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+
+		&.is-disabled {
+			pointer-events: none;
+		}
+	}
+
+	&__roll {
+		height: 0;
+		min-height: 0;
+		overflow: hidden;
+		will-change: transform;
+	}
+
+	&__content {
+		position: relative;
+		margin-bottom: rem(16);
+	}
+
+	&__toggle {
+		.link-action {
+			min-height: rem(16);
+			line-height: rem(16);
+		}
+	}
+
+	.ps__rail-x,
+	.ps__rail-y {
+		opacity: 0;
+		pointer-events: none;
+	}
+}

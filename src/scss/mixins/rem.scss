@@ -5,3 +5,11 @@ $base-value: 17 !default;
 
   @return #{$remSize}rem;
 }
+
+@function columns12($columns) {
+  @return calc(100% / 12 * $columns);
+}
+
+@function columns($count, $columns) {
+  @return calc(100% / $columns * $count);
+}

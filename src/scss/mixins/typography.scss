@@ -60,6 +60,12 @@
   font-family: $font-family-inter;
 }
 
+@mixin text-small {
+  font-size: rem(12);
+  line-height: 1.2;
+  font-family: $font-family-inter;
+}
+
 
 @mixin text-body {
   font-size: rem(14);

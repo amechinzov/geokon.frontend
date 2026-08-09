@@ -1,0 +1,22 @@
+<label
+	class="checkbox{% if field.class %} {{ field.class }}{% endif %}
+	{% if field.theme %} checkbox--{{ field.theme }}{% endif %}
+	{% if field.radio %} checkbox--radio{% endif %}
+	{% if field.disabled %} checkbox--disabled{% endif %}"
+>
+	<input{% if field.id %} id="{{ field.id }}"{% endif %}
+		type="{% if field.checkbox %}checkbox{% else %}radio{% endif %}"
+		{% if field.checked %} checked{% endif %}
+		class="checkbox__input" name="{{ field.name }}"
+		{% if field.value %} value="{{ field.value }}"{% endif %}
+		{% if field.required %} required{% endif %}
+		{% if field.disabled %} disabled{% endif %}
+		{% if field.attr %}{{ field.attr }}{% endif %}
+	>
+	<span class="checkbox__box"></span>
+	{% if field.text %}
+		<span class="checkbox__text">
+			<span>{{ field.text }}</span>
+		</span>
+	{% endif %}
+</label>

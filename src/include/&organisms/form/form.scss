@@ -1,0 +1,325 @@
+.form {
+  background-color: $color-white;
+  padding: rem(32);
+  color: $color-primary;
+  width: columns12(8);
+  margin: 0 auto;
+  &__title {
+    font-size: rem(32);
+    margin-top: rem(32);
+    margin-bottom: rem(32);
+  }
+  &__image {
+    width: rem(72);
+    height: rem(72);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $color-green;
+  }
+
+  &__fields {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+      column-gap: rem(24);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+
+    @at-root .brands-layout & {
+      flex-wrap: nowrap;
+      align-items: center;
+
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        gap: rem(24);
+      }
+    }
+  }
+
+  &__field {
+    position: relative;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+
+      &.is-group.is-radio {
+        @include media-breakpoint-up(md) {
+          margin-bottom: rem(24);
+        }
+      }
+    }
+
+    &.is-group.is-radio {
+      &+&.is-group.is-radio {
+        &:not(:first-child) {
+          @include media-breakpoint-up(md) {
+            margin-top: rem(-16)
+          }
+        }
+      }
+
+      &+.is-select {
+        &:not(:first-child) {
+          @include media-breakpoint-up(md) {
+            margin-top: rem(-16)
+          }
+        }
+      }
+    }
+
+    @at-root .brands-layout & {
+      margin-bottom: 0;
+
+      &.is-group.is-radio {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      &.is-select {
+        @include media-breakpoint-up(md) {
+          width: rem(182);
+        }
+      }
+
+      &+.is-select {
+        &:not(:first-child) {
+          @include media-breakpoint-up(md) {
+            margin-top: rem(6) !important;
+          }
+        }
+      }
+    }
+
+    .line-wrapper,
+    .line {
+      width: 100%;
+    }
+
+    &.is-half {
+      @include media-breakpoint-up(md) {
+        width: calc(100% / 2 - #{rem(12)});
+      }
+    }
+
+    &.is-group.is-radio,
+    &.is-select {
+      position: relative;
+      z-index: calc(var(--item-index));
+    }
+
+		&.is-group.is-radio.layout-tabs {
+			@at-root .in-contacts & {
+				.field-group__field {
+					.checkbox {
+						margin: 0;
+						padding: 0;
+					}
+				}
+			}
+		}
+
+    &.has-search {
+      position: relative;
+      z-index: calc(var(--item-index));
+    }
+
+    .checkbox__text {
+      color: $color-primary;
+    }
+
+		&.is-hidden {
+			@include visually-hidden;
+		}
+
+		&.is-checkbox {
+			input:not([checked]) {
+				~ .checkbox__text {
+					color: $color-primary;
+
+					a {
+						color: $color-primary-half;
+
+						@include hover {
+							color: $color-primary;
+						}
+					}
+				}
+			}
+
+			.checkbox:not([checked]) {
+				@include hover {
+					.checkbox__text {
+						a {
+							color: $color-primary;
+						}
+					}
+				}
+			}
+		}
+
+		&.is-priority {
+			z-index: 20;
+		}
+  }
+
+  &__submit {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__action {
+    width: 100%;
+    &:not(:last-child) {
+      @include media-breakpoint-only(sm) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+
+  &__policy {
+    @include text-default;
+
+    >a {
+      color: $color-black;
+      position: relative;
+      @include line-animate-in($color-primary);
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-left: rem(35);
+      max-width: rem(287);
+    }
+  }
+
+  &__response {
+    display: none;
+  }
+
+  &[data-fixed-filter] {
+    @include media-breakpoint-down(md) {
+      position: relative;
+      z-index: 3;
+      max-width: 100%;
+
+      &.is-fixed {
+        position: fixed;
+        transform: translateY(-100%);
+      }
+    }
+
+		@include media-breakpoint-up(lg) {
+			@include pointerCoarse {
+				&.is-fixed {
+					position: fixed;
+					transform: translateY(-100%);
+				}
+			}
+		}
+
+    @include media-breakpoint-only(md) {
+      top: rem(-12);
+			left: rem(-24);
+			min-width: calc(100% + #{rem(44)});
+
+			.field-group.is-small {
+				position: relative;
+				padding: 0;
+				margin-left: rem(-20);
+				padding-left: rem(48);
+				&::before {
+					content: '';
+					width: rem(24);
+					height: 100%;
+					position: absolute;
+					left: rem(20);
+					top: 0;
+					background: #fff;
+				}
+			}
+
+			.field-group__field:last-child {
+				margin-right: rem(16);
+			}
+    }
+
+		@include media-breakpoint-up(lg) {
+			@include pointerCoarse {
+				top: 0;
+				left: 0;
+				min-width: calc(100% + #{rem(32)});
+
+				.field-group.is-small {
+					position: relative;
+					margin-left: rem(-16);
+					padding-left: rem(16);
+					&::before {
+						content: '';
+						width: rem(16);
+						height: 100%;
+						position: absolute;
+						left: 0;
+						top: 0;
+						background: #fff;
+					}
+				}
+			}
+		}
+
+    @include media-breakpoint-down(sm) {
+      top: 0;
+      left: 0;
+      min-width: calc(100% + #{rem(32)});
+
+			.field-group.is-small {
+				position: relative;
+				margin-left: rem(-16);
+				padding-left: rem(16);
+				&::before {
+					content: '';
+					width: rem(16);
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					background: #fff;
+				}
+			}
+    }
+
+    &.is-fixed {
+      @include media-breakpoint-only(md) {
+				left: rem(-24);
+        top: rem(72);
+        //max-width: calc(100% - #{rem(24)});
+        padding-left: rem(24);
+				min-width: calc(100% + #{rem(24)});
+      }
+
+			@include media-breakpoint-up(lg) {
+				@include pointerCoarse {
+					left: 0;
+					top: rem(72);
+					max-width: calc(100%);
+					padding-left: rem(16);
+					min-width: calc(100% + #{rem(16)});
+				}
+			}
+
+      @include media-breakpoint-down(sm) {
+        left: 0;
+        top: rem(64);
+        max-width: calc(100%);
+        padding-left: rem(16);
+				min-width: calc(100% + #{rem(16)});
+      }
+    }
+  }
+}

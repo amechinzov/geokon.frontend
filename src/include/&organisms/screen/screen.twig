@@ -53,6 +53,10 @@
                 {% view '&partners' with { block: block.partners } %}
             {% endif %}
 
+            {% if block.people %}
+                {% view '&people' with { block: block.people } %}
+            {% endif %}
+
         </div>
 
     </div>

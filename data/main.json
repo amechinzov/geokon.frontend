@@ -493,9 +493,168 @@
     "tag": {
       "text": "Вакансии"
     },
-    "text": "Для своих сотрудников мы предлагаем полный соц. пакет, официальное трудоустройство и конкурентную заработную плату. "
+    "text": "Для своих сотрудников мы предлагаем полный соц. пакет, официальное трудоустройство и конкурентную заработную плату.",
+    "theme": "under",
+    "people": {
+      "outerLinks": {
+        "people": {
+          "images": [
+            {
+              "src": "/img/people/1.jpg"
+            },
+            {
+              "src": "/img/people/2.jpg"
+            },
+            {
+              "src": "/img/people/3.jpg"
+            }
+          ]
+        },
+        "buttons": {
+          "items": [
+            {
+              "text": "hh.ru",
+              "href": "https://hh.ru/",
+              "external": true,
+              "fit": true
+            },
+            {
+              "text": "hh.ru",
+              "href": "https://hh.ru/",
+              "external": true,
+              "fit": true
+            }
+          ],
+          "text": "Ознакомьтесь с вакансиями на портале"
+        }
+      },
+      "vacancies": [
+        {
+          "text": "Специальность 1",
+          "href": "https://google.ru/",
+          "external": true
+        },
+        {
+          "text": "Специальность 2",
+          "href": "https://google.ru/",
+          "external": true
+        },
+        {
+          "text": "Специальность 3",
+          "href": "https://google.ru/",
+          "external": true
+        }
+      ]
+    }
+  },
+  "form": {
+    "title": "Если вы уже работаете с нами и у вас возникли вопросы по документам, напишите нам",
+    "buttons": [
+      {
+        "text": "Написать в telegram",
+        "href": "https://hh.ru/",
+        "external": true,
+        "fit": true,
+        "icon": "24/telegram"
+      },
+      {
+        "text": "Написать на почту",
+        "href": "mailto:mail@mail.ru",
+        "external": true,
+        "fit": true,
+        "icon": "24/mail"
+      }
+    ],
+    "form": {
+      "image": {
+        "src": "/img/form/1.png"
+      },
+      "method": "POST",
+      "action": "#",
+      "attr": "data-form",
+      "title": "Оставьте заявку на обратный звонок и специалист свяжется \nс вами ",
+      "fields": [
+        {
+          "input": true,
+          "type": "text",
+          "placeholder": "Введите имя",
+          "label": "Ваше имя",
+          "name": "name",
+          "required": true
+        },
+        {
+          "input": true,
+          "placeholder": "+7 (000) 000-00-00",
+          "label": "Телефон",
+          "type": "tel",
+          "name": "number",
+          "required": true
+        },
+        {
+          "checkbox": true,
+          "id": "checkbox-3",
+          "name": "checkbox-3",
+          "required": true,
+          "text": "Я соглашаюсь с условиями передачи информации, <a href='#' target=_blank>политикой обработки персональных данных</a>"
+        }
+      ],
+      "submit": {
+        "fit": true,
+        "type": "submit",
+        "text": "Отправить сообщение"
+      }
+    }
+  },
+  "map": {
+    "apikey": "",
+    "center": [55.751574, 37.573856],
+    "zoom": 15,
+    "placemark": [55.751574, 37.573856]
   },
   "footer": {
-    "text": "footer 22"
+    "title": "BIM-проектирование зданий",
+    "socials": [
+      {
+        "href": "https://t.me/",
+        "icon": "24/telegram"
+      },
+      {
+        "href": "mailto:info@mail.ru",
+        "icon": "24/mail"
+      }
+    ],
+    "menu": {
+      "title": "Разделы",
+      "items": [
+        { "text": "Услуги", "href": "#" },
+        { "text": "Проекты", "href": "#" },
+        { "text": "О компании", "href": "#" },
+        { "text": "Cистемы", "href": "#" },
+        { "text": "Как мы работаем", "href": "#" },
+        { "text": "Команда", "href": "#" }
+      ]
+    },
+    "contacts": {
+      "title": "Контакты",
+      "address": "г.Уфа, Улица, Офис",
+      "workHours": "Время работы:\nc 08:00 - 18:00"
+    },
+    "logo": {
+      "src": "/img/logo.png",
+      "alt": "logo"
+    },
+    "bigEmail": {
+      "href": "mailto:info@mail.ru",
+      "text": "info@mail.ru"
+    },
+    "bigPhone": {
+      "href": "tel:+80000000000",
+      "text": "8 (000) 000 00 00"
+    },
+    "copyright": "Компания ГЕОКОН. Все права защищены",
+    "privacy": {
+      "text": "Политика конфиденциальности",
+      "href": "#"
+    }
   }
 }

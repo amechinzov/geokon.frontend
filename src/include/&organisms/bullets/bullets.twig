@@ -6,18 +6,6 @@
     {% endif %}
 
     {% if block.items %}
-        <ul class="bullets__list">
-            {% for index, item in block.items %}
-                {% set key = index + 1 %}
-                <li class="bullets__item">
-                    <div class="bullets__number">
-                        {{ key // 10 > 0 ? key : '0' ~ key }}
-                    </div>
-                    <div class="bullets__text">
-                        {{ item.text }}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+        {% view '^bullets-list' with { bullets: {items:block.items} } %}
     {% endif %}
 </div>

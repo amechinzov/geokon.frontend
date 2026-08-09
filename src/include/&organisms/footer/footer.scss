@@ -1,9 +1,233 @@
 .footer {
   $root: &;
 
-  display: block;
+  background: $color-dark-green;
+  padding: rem(60) 0 rem(32);
 
-  &__text {
-    font-size: 12px;
+  @include media-breakpoint-up(md) {
+    padding: rem(100) 0 rem(32);
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(40);
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr auto auto auto;
+      gap: rem(64);
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__title {
+    font-family: $font-family-bebas;
+    font-weight: 700;
+    font-size: rem(48);
+    line-height: 1.12;
+    color: $color-white;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(64);
+      line-height: rem(72);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: rem(64);
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(56);
+    height: rem(56);
+    background: rgba($color-green, 0.3);
+    border-radius: 50%;
+    color: $color-white;
+    @include defaultTransition(background);
+
+    .icon {
+      width: rem(28);
+      height: rem(28);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $color-white;
+    }
+
+    @include hover {
+      background: rgba($color-green, 0.5);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__menu-title,
+  &__contacts-title {
+    font-family: $font-family-inter;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: 1;
+    color: $color-white;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__menu-link {
+    font-family: $font-family-inter;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(19);
+    color: $color-white-half;
+    text-decoration: none;
+    @include defaultTransition(color);
+
+    @include hover {
+      color: $color-white;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__contacts-item {
+    font-family: $font-family-inter;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: $color-white-half;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(56);
+    height: rem(56);
+    background: rgba($color-green, 0.3);
+    border-radius: 50%;
+    color: $color-white;
+    @include defaultTransition(background);
+
+    .icon {
+      width: rem(28);
+      height: rem(28);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $color-white;
+    }
+
+    @include hover {
+      background: rgba($color-green, 0.5);
+    }
+  }
+
+  &__big-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: rem(8);
+    margin-top: rem(40);
+
+    @include media-breakpoint-up(md) {
+      margin-top: rem(60);
+    }
+  }
+
+  &__big-link {
+    font-family: $font-family-bebas;
+    font-weight: 700;
+    font-size: rem(40);
+    line-height: 1;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include defaultTransition(opacity);
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(64);
+      line-height: rem(64);
+    }
+
+    @include hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    margin-top: rem(40);
+    padding-top: rem(32);
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: rem(60);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    gap: rem(8);
+    font-family: $font-family-inter;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $color-white-half;
+  }
+
+  &__privacy {
+    font-family: $font-family-inter;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $color-white-half;
+    text-decoration: none;
+    @include defaultTransition(color);
+
+    @include hover {
+      color: $color-white;
+    }
   }
 }

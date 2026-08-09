@@ -1,0 +1,63 @@
+<div class="field-group{{ field.class ? ' '~field.class : '' }}"
+	 data-animate{% if field.delay %} data-delay="{{ field.delay }}"{% else %} data-delay="{{ (loop.index0 / 10 + 0.4)|round(1, 'floor') }}"{% endif %}
+>
+	{% if field.label %}
+		<div class="field-group__label">
+			<span>{{ field.label }}</span>
+
+			{% if field.hint %}
+				{% view '@hint' with {
+					hint: field.hint
+				} %}
+			{% endif %}
+		</div>
+	{% endif %}
+	<div class="field-group__inner">
+		{% if field.button %}
+			<div class="field-group__button" data-fields-toggle
+				 data-animate data-fade-in data-delay='0.5'>
+				{% view '@button' with {
+					button: field.button
+				} %}
+			</div>
+		{% endif %}
+
+		{% if field.fields %}
+			<div class="field-group__fields" data-toggles-wrap>
+				{% for field in field.fields %}
+					<div class="field-group__field{% if field.class %} {{ field.class }}{% endif %}{% if field.disabled %} is-disabled{% endif %}">
+						{% view '@field' with {
+							field: field
+						} %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if field.toggle and field.hiddenFields %}
+			<div class="field-group__accordion" data-accordion data-read-more>
+				<div class="field-group__roll" data-roll>
+					<div class="field-group__content">
+						{% if field.hiddenFields %}
+							<div class="field-group__hidden">
+								{% for field in field.hiddenFields %}
+									<div class="field-group__field{% if field.class %} {{ field.class }}{% endif %}">
+										{% view '@field' with {
+											field: field
+										} %}
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="field-group__toggle" data-toggle>
+					{% view '@link-action' with {
+						link: field.toggle
+					} %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>

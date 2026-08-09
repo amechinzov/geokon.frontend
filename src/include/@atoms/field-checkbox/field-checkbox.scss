@@ -1,0 +1,126 @@
+.checkbox {
+	$root: &;
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	min-height: rem(20);
+	min-width: rem(20);
+	cursor: pointer;
+
+	&--disabled {
+		pointer-events: none;
+	}
+
+	@include hover {
+		#{$root}__input:not(:disabled) ~ #{$root}__box {
+			opacity: 1;
+			background-color: $color-primary;
+
+			&:after {
+				//opacity: 1;
+			}
+		}
+		#{$root}__input:not(:disabled) ~ #{$root}__text {
+			color: $color-primary;
+		}
+	}
+
+	&__input {
+		@include visually-hidden;
+	}
+
+	&__box {
+		@include defaultTransition(background-color, border-color, opacity, background-image);
+
+		position: absolute;
+		top: rem(3);
+		left: rem(3);
+		display: block;
+		height: rem(16);
+		width: rem(16);
+		background-color: transparent;
+		border: 1px solid $color-white;
+
+		&:after {
+			@include defaultTransition(opacity);
+
+			position: absolute;
+			content: "";
+			opacity: 0;
+		}
+
+		#{$root}--radio & {
+			top: rem(10);
+			left: rem(-2);
+			border-radius: 50%;
+			height: rem(26);
+			width: rem(26);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='7' fill='%23333C43' fill-opacity='1'/%3E%3C/svg%3E") center no-repeat transparent!important;
+			background-size: 100% !important;
+			opacity: 0.4;
+		}
+
+		#{$root}:not(#{$root}--radio) & {
+			&:after {
+				top: 50%;
+				left: 50%;
+				transform: translate(-51%, -51%);
+				width: calc(100% - #{rem(4.3)});
+				height: calc(100% - #{rem(4.3)});
+				background-color: $color-white;
+			}
+		}
+
+		#{$root}__input:checked ~ & {
+			background-color: $color-primary;
+			border-color: $color-primary;
+
+			&:after {
+				opacity: 1;
+			}
+
+			@at-root #{$root}--radio & {
+				background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='7' fill='white'/%3E%3Ccircle cx='12' cy='12' r='5' fill='%23333C43'/%3E%3C/svg%3E") center no-repeat transparent!important;
+				background-size: 100% !important;
+				opacity: 1;
+			}
+		}
+
+		#{$root}__input:disabled ~ & {
+			border-color: transparent;
+			background-color: $color-white;
+		}
+
+		#{$root}__input:checked:disabled ~ & {
+			border-color: transparent;
+			background-color: $color-white;
+
+			&:after {
+				background-color: $color-white;
+			}
+		}
+	}
+
+	&__text {
+		color: $color-primary;
+		@include text-default;
+		@include defaultTransition(color);
+
+		display: inline-flex;
+		padding-left: rem(32);
+		margin-bottom: rem(-4);
+
+		#{$root}__input:disabled ~ & {
+			color: $color-primary;
+		}
+
+		a[href] {
+			color: $color-primary;
+			@include line-animate-in($color-primary);
+		}
+	}
+}

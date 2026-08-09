@@ -1,0 +1,31 @@
+{% if link.href %}
+	{% if link.href starts with '#' and link.href|length > 2 %}
+		<span data-anchor-id={{link.href|slice(1)}} class="link{% if link.theme %} link--{{ link.theme }}{% endif %}{% if link.fit %} link--fit{% endif %}{% if link.disabled %} link--disabled{% endif %}{% if link.loading %} link--loading{% endif %}{% if link.size %} link--{{ link.size }}{% endif %}" {% if link.attr %} {{ link.attr }} {% endif %} {% if link.title %} title="{{ link.title }}" {% endif %} {% if link.tip %} data-tip data-tip-content="{{ link.tip }}" {% endif %}>
+			{% if link.icon %}
+				<span class="link__icon">
+					{% view '@icon' with {icon: link.icon} %}
+				</span>
+			{% endif %}
+
+			{% if link.text %}
+				<span class="link__text">
+					{{link.text}}
+				</span>
+			{% endif %}
+		</span>
+	{% else %}
+		<a href="{{link.href}}" class="link{% if link.theme %} link--{{ link.theme }}{% endif %}{% if link.fit %} link--fit{% endif %}{% if link.disabled %} link--disabled{% endif %}{% if link.loading %} link--loading{% endif %}{% if link.size %} link--{{ link.size }}{% endif %}" {% if link.attr %} {{ link.attr }} {% endif %} {% if link.title %} title="{{ link.title }}" {% endif %} {% if link.tip %} data-tip data-tip-content="{{ link.tip }}" {% endif %} {% if link.external %} target="_blank" rel="nofollow" {% endif %}>
+			{% if link.icon %}
+				<span class="link__icon">
+					{% view '@icon' with {icon: link.icon} %}
+				</span>
+			{% endif %}
+
+			{% if link.text %}
+				<span class="link__text">
+					{{link.text}}
+				</span>
+			{% endif %}
+		</a>
+	{% endif %}
+{% endif %}

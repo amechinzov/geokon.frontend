@@ -1,0 +1,38 @@
+<div class="field{{ field.type=='hidden' ? ' field--hidden' : '' }}">
+	{% if field.label and field.fields is empty or false %}
+		<label for="{{ field.id }}" class="field__label{% if field.required %} is-required{% endif %}{% if field.textarea %} for-textarea{% endif %}{% if field.value %} is-visible{% endif %}">
+			<span>{{ field.label }}</span>
+		</label>
+	{% endif %}
+	<div class="field__control">
+		{% if field.input or field.type == 'hidden' %}
+			{% view '@field-input' with {
+				field: field
+			} %}
+		{% elseif field.search or field.type == 'search' %}
+			{% view '@field-search' with {
+				field: field
+			} %}
+		{% elseif field.textarea %}
+			{% view '@field-textarea' with {
+				field: field
+			} %}
+		{% elseif field.select %}
+			{% view '@field-select' with {
+				field: field
+			} %}
+		{% elseif field.checkbox or field.radio %}
+			{% view '@field-checkbox' with {
+				field: field
+			} %}
+		{% elseif field.fields %}
+			{% view '@field-group' with {
+				field: field
+			} %}
+		{% elseif field.file %}
+			{% view '@field-file' with {
+				field: field
+			} %}
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,79 @@
+.field {
+  $root: &;
+
+  position: relative;
+  display: block;
+  width: 100%;
+
+  //font-size: 0;
+  //line-height: 1;
+
+  &--hidden {
+    @include visually-hidden;
+  }
+
+  &__label {
+
+    display: inline-flex;
+    top: rem(16);
+    width: 100%;
+    color: $color-primary;
+    @include text-default;
+    transition: opacity .3s, top .3s;
+    pointer-events: none;
+
+    @include media-breakpoint-up(md) {
+      top: rem(20);
+    }
+
+    &.is-visible {
+      @include text-small;
+      top: rem(-4);
+      opacity: 1;
+      color: $color-white;
+      transform: translateY(0%);
+      transition: opacity .3s, top .3s;
+
+      & span:before {
+        opacity: 0;
+      }
+    }
+
+    &.is-required {
+      span {
+        display: inline-flex;
+        position: relative;
+        padding-right: rem(15);
+
+        @include media-breakpoint-up(md) {
+          padding-right: rem(16);
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: rem(4);
+          right: 0;
+          width: rem(6);
+          height: rem(6);
+          border-radius: 50%;
+          background-color: rgba($color-white, .2);
+          @include defaultTransition(opacity);
+
+          @include media-breakpoint-up(md) {
+            top: rem(4);
+          }
+        }
+      }
+    }
+  }
+
+  &__control {
+    position: relative;
+  }
+
+  & .parsley-errors-list {
+    @include text-small;
+    color: $color-primary;
+  }
+}

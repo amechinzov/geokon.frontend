@@ -1,0 +1,30 @@
+<div class="people">
+    {% if block.vacancies %}
+        <div class="vacancies">
+            {% view '^bullets-list' with { bullets: {items:block.vacancies, theme: 'people'} } %}
+        </div>
+    {% endif %}
+    {% if block.outerLinks %}
+        <div class="outerLinks">
+            {% if block.outerLinks.people %}
+                {% if block.outerLinks.people.images %}
+                    <div class="outerLinks__images">
+                        {% for image in block.outerLinks.people.images %}
+                            <div class="outerLinks__images-item" style="background-image: url({{ image.src }})"></div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% if block.outerLinks.buttons %}
+                <p class="outerLinks__text">{{ block.outerLinks.buttons.text }}</p>
+                <div class="outerLinks__buttons">
+                    {% for button in block.outerLinks.buttons.items %}
+                        <div class="outerLinks__buttons-item">
+                            {% view '@button' with { button: button } %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

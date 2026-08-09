@@ -1,0 +1,31 @@
+<div class="input-search-shell{% if field.disabled %} disabled{% endif %}{% if field.reset %} has-reset{% endif %}{% if field.class %} {{ field.class }}{% endif %}" data-search-input-wrap>
+	<input{% if field.id %} id="{{ field.id }}"{% endif %}
+		type="search"
+		class="input-search{% if field.class %} {{ field.class }}{% endif %}
+		{% if field.theme %} input-search--{{ field.theme }}{% endif %}{% if field.icon %} has-icon{% endif %}"
+		{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}
+		name="{{ field.name }}"{% if field.attr %} {{ field.attr }}{% endif %}
+		{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}
+		{% if field.disabled %} disabled{% endif %}
+		{% if field.required %} required{% endif %}
+		{% if field.value %} value="{{ field.value }}"{% endif %}
+		{% if field.url %} data-url="{{ field.url }}"{% endif %}
+		{% if field.method %} data-method="{{ field.method }}"{% endif %} data-search-input>
+
+	{% if field.icon %}
+		<div class="input-search__icon">
+			{% view '@icon' with {
+				icon: field.icon
+			} %}
+		</div>
+	{% endif %}
+	{% if field.reset %}
+		<button type="reset" class="input-search__reset" data-search-reset>
+			{% view '@icon' with {
+				icon: {
+					name: "24/close"
+				}
+			} %}
+		</button>
+	{% endif %}
+</div>
