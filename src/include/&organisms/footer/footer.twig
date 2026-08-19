@@ -64,8 +64,11 @@
 
         <div class="footer__bottom">
             <div class="footer__copyright">
-                <span>{{ "now"|date("Y") }}</span>
-                <span>{{ footer.copyright }}</span>
+                <a href="https://filippovmarketing.ru/" class="footer__copyright-link" target="_blank" rel="noopener"></a>
+                <div class="footer__copyright-text">
+                    <span>{{ "now"|date("Y") }}</span>
+                    <span>{{ footer.copyright }}</span>
+                </div>
             </div>
             {% if footer.privacy %}
                 <a href="{{ footer.privacy.href }}" class="footer__privacy">{{ footer.privacy.text }}</a>

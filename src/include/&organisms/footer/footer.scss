@@ -202,19 +202,36 @@
     @include media-breakpoint-up(md) {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
-      margin-top: rem(60);
+      align-items: flex-end;
+      margin-top: rem(20);
     }
   }
 
   &__copyright {
     display: flex;
+    flex-direction: column;
     gap: rem(8);
     font-family: $font-family-inter;
     font-weight: 400;
     font-size: rem(14);
     line-height: rem(17);
     color: $color-white-half;
+  }
+
+  &__copyright-text {
+    display: flex;
+    gap: rem(8);
+  }
+
+  &__copyright-link {
+    display: inline-block;
+    min-height: rem(50);
+    background: url('/img/copyright.svg') no-repeat left / contain;
+    @include defaultTransition(opacity);
+
+    @include hover {
+      opacity: 0.8;
+    }
   }
 
   &__privacy {
