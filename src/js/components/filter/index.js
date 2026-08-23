@@ -12,6 +12,7 @@ function filterProjects(value) {
     .then((html) => {
       list.innerHTML = html;
       list.classList.remove('loading');
+      window.dispatchEvent(new Event('init.lazyload'));
     })
     .catch(() => {
       list.classList.remove('loading');
