@@ -1,18 +1,21 @@
 const PROJECTS_LIST_SELECTOR = '.projects__list';
-const PROJECT_SELECTOR = '.project';
+const AJAX_URL = '/ajax/projects.php';
 
 function filterProjects(value) {
   const list = document.querySelector(PROJECTS_LIST_SELECTOR);
   if (!list) return;
 
-  const projects = list.querySelectorAll(PROJECT_SELECTOR);
-  projects.forEach((project) => {
-    if (value === 'all' || project.dataset.section === value) {
-      project.style.display = '';
-    } else {
-      project.style.display = 'none';
-    }
-  });
+  list.classList.add('loading');
+
+  fetch(`${AJAX_URL}?section=${encodeURIComponent(value)}`)
+    .then((res) => res.text())
+    .then((html) => {
+      list.innerHTML = html;
+      list.classList.remove('loading');
+    })
+    .catch(() => {
+      list.classList.remove('loading');
+    });
 }
 
 export default {
