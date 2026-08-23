@@ -1,3 +1,20 @@
+const PROJECTS_LIST_SELECTOR = '.projects__list';
+const PROJECT_SELECTOR = '.project';
+
+function filterProjects(value) {
+  const list = document.querySelector(PROJECTS_LIST_SELECTOR);
+  if (!list) return;
+
+  const projects = list.querySelectorAll(PROJECT_SELECTOR);
+  projects.forEach((project) => {
+    if (value === 'all' || project.dataset.section === value) {
+      project.style.display = '';
+    } else {
+      project.style.display = 'none';
+    }
+  });
+}
+
 export default {
   init: () => {
     const filters = document.querySelectorAll('[data-filter]');
@@ -5,14 +22,15 @@ export default {
 
     if (!document.querySelector('[data-filter].active')) {
       filters[0].classList.add('active');
-      console.log(filters[0]);
     }
+
     filters.forEach((filter) => {
       filter.addEventListener('click', () => {
-        filters.forEach((filter) => {
-          filter.classList.remove('active');
-        });
+        filters.forEach((f) => f.classList.remove('active'));
         filter.classList.add('active');
+
+        const value = filter.dataset.filter;
+        filterProjects(value);
       });
     });
   },
