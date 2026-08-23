@@ -8,12 +8,12 @@
     "menu": {
       "title": "Разделы",
       "items": [
-        { "text": "Услуги", "href": "#" },
-        { "text": "Проекты", "href": "#" },
-        { "text": "О компании", "href": "#" },
-        { "text": "Cистемы", "href": "#" },
-        { "text": "Как мы работаем", "href": "#" },
-        { "text": "Команда", "href": "#" }
+        { "text": "Услуги", "href": "#services" },
+        { "text": "Проекты", "href": "#projects" },
+        { "text": "О компании", "href": "#about" },
+        { "text": "Cистемы", "href": "#product" },
+        { "text": "Как мы работаем", "href": "#howWeWork" },
+        { "text": "Команда", "href": "#people" }
       ]
     },
     "contacts": {

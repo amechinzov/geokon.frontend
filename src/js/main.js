@@ -14,8 +14,10 @@ import './utils/userAgent.js';
 import './bx/app.js';
 import modal from './components/modal/index.js';
 import filter from './components/filter/index.js';
+import anchorScroll from './components/anchor-scroll/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   modal.init();
   filter.init();
+  anchorScroll.init();
 });

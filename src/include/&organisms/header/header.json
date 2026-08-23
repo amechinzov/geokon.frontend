@@ -15,6 +15,13 @@
         "href": "tel:+7(999)999-99-99",
         "text": "+7(999)999-99-99"
       }
+    ],
+    "menu": [
+      { "text": "О компании", "href": "#about" },
+      { "text": "Услуги", "href": "#services" },
+      { "text": "Проекты", "href": "#projects" },
+      { "text": "Как мы работаем", "href": "#howWeWork" },
+      { "text": "Команда", "href": "#people" }
     ]
   }
 }
