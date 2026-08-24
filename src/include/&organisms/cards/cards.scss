@@ -6,6 +6,11 @@
 
   &.howWeWork &__item {
     height: 236px;
+
+    @include media-breakpoint-down(sm) {
+      height: auto;
+      min-height: rem(180);
+    }
   }
 
   &__item{
@@ -23,6 +28,18 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    @include media-breakpoint-down(md) {
+      width: 47%;
+      height: rem(320);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      height: auto;
+      min-height: rem(250);
+      margin: 0 0 rem(16) 0;
+    }
 
     &-content{
       display: flex;
@@ -44,6 +61,10 @@
       text-transform: uppercase;
       font-family: $font-family-bebas;
       font-weight: bold;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(24);
+      }
     }
     &-button {
       height: max-content;
@@ -69,6 +90,10 @@
     &-text{
       font-size: rem(16);
       font-family: $font-family-inter;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(14);
+      }
     }
   }
 
