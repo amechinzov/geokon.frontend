@@ -2,6 +2,14 @@
   $root: &;
   padding: rem(118) 0;
 
+  @include media-breakpoint-down(md) {
+    padding: rem(60) 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(40) 0;
+  }
+
   &__heading {
     display: flex;
     flex-direction: column;
@@ -10,14 +18,30 @@
     #{$root}__description {
       display: flex;
       padding: rem(60) 0 rem(80) 0;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        padding: rem(32) 0 rem(40) 0;
+      }
     }
 
     #{$root}__title {
       width: 65%;
       padding-right: 15%;
-      font-size: rem(56);
+      font-size: rem(58);
       line-height: 72px;
       font-family: $font-family-bebas;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        padding-right: 0;
+        font-size: rem(36);
+        line-height: 1.2;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(28);
+      }
     }
 
     #{$root}__text {
@@ -27,6 +51,17 @@
 
       p {
         margin-bottom: rem(44);
+
+        @include media-breakpoint-down(md) {
+          margin-bottom: rem(24);
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        font-size: rem(16);
+        line-height: rem(24);
+        margin-top: rem(16);
       }
     }
 
@@ -36,14 +71,27 @@
         flex-direction: column;
         padding: rem(60) 0 rem(40) 0;
 
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          padding: rem(32) 0 rem(24) 0;
+        }
+
         #{$root}__title {
           width: 100%;
           padding-right: 35%;
+
+          @include media-breakpoint-down(md) {
+            padding-right: 0;
+          }
         }
 
         #{$root}__text {
           width: 100%;
           width: columns(4, 5);
+
+          @include media-breakpoint-down(md) {
+            width: 100%;
+          }
         }
       }
     }
@@ -52,14 +100,27 @@
       flex-wrap: wrap;
       flex-direction: row;
 
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+
       .tag {
         width: columns12(5);
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+        }
       }
 
       #{$root}__description {
         width: columns12(7);
         flex-direction: column;
         padding-top: 0;
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          padding: rem(24) 0 rem(32) 0;
+        }
 
         #{$root}__title {
           width: 100%;
@@ -69,6 +130,11 @@
         #{$root}__text {
           margin-top: rem(32);
           width: columns(4, 7);
+
+          @include media-breakpoint-down(md) {
+            width: 100%;
+            margin-top: rem(16);
+          }
         }
       }
 
@@ -100,10 +166,28 @@
   &__content {
     display: flex;
     justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
   }
 
   &__image {
     min-width: 50%;
     @include image-div;
+
+    @include media-breakpoint-down(md) {
+      min-width: 100%;
+      min-height: rem(250);
+      margin-top: rem(24);
+      order: 1;
+    }
+  }
+
+  .bullets {
+    @include media-breakpoint-down(md) {
+      order: 2;
+      margin-top: rem(24);
+    }
   }
 }

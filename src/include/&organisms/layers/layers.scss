@@ -4,11 +4,27 @@
   position: relative;
   display: flex;
 
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
   &__images {
     width: 75%;
-    height: 100%;
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      min-height: rem(300);
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-height: rem(200);
+    }
 
     &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       @include background(contain, center);
@@ -25,6 +41,12 @@
     display: flex;
     flex-direction: column;
 
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      flex-direction: column;
+      margin-top: rem(16);
+    }
+
     &-item {
       cursor: default;
       color: $color-primary;
@@ -37,6 +59,12 @@
       &.active {
         color: $color-white;
         background-color: $color-green;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        padding: rem(10) rem(16);
+        font-size: rem(14);
       }
     }
   }

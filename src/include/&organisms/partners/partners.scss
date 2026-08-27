@@ -4,10 +4,26 @@
   row-gap: rem(32);
   width: 100%;
 
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(16);
+  }
+
   &__item {
     @include image-div;
     height: rem(300);
-    width: rem(362);
+    width: 100%;
 
+    @include media-breakpoint-down(md) {
+      height: rem(200);
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: rem(150);
+    }
   }
 }

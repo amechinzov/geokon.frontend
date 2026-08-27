@@ -10,7 +10,20 @@
         width: 50%;
         height: 100%;
         justify-content: space-evenly;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            padding: rem(40) 0;
+        }
     }
 
     min-height: rem(800);
+
+    @include media-breakpoint-down(md) {
+        min-height: rem(500);
+    }
+
+    @include media-breakpoint-down(sm) {
+        min-height: rem(400);
+    }
 }

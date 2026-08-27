@@ -5,10 +5,24 @@
   width: calc(50% - #{rem(16)});
   color: $color-primary;
 
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    padding: rem(20);
+  }
+
   &:hover {
     color: $color-light-green;
     box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.1);
     transition: all .3s ease-in-out;
+  }
+
+  &__image {
+    @include media-breakpoint-down(sm) {
+      .image {
+        max-height: rem(200);
+        overflow: hidden;
+      }
+    }
   }
 
   &__tags {
@@ -21,6 +35,16 @@
     font-weight: bold;
     font-size: rem(32);
     text-transform: uppercase;
+
+    @include media-breakpoint-down(sm) {
+      font-size: rem(24);
+    }
+  }
+
+  &__description {
+    @include media-breakpoint-down(sm) {
+      font-size: rem(14);
+    }
   }
 
   &__link {

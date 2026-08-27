@@ -4,11 +4,31 @@
   .filters {
     margin-top: rem(48);
     margin-bottom: rem(24);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(24);
+      margin-bottom: rem(16);
+    }
+
+    @include media-breakpoint-down(sm) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      margin-left: rem(-16);
+      margin-right: rem(-16);
+      padding-left: rem(16);
+      padding-right: rem(16);
+    }
   }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     gap: rem(32);
     margin-top: rem(24);
+
+    @include media-breakpoint-down(md) {
+      gap: rem(16);
+    }
   }
 }

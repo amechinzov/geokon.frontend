@@ -4,6 +4,11 @@
   row-gap: rem(32);
   width: 100%;
 
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr;
+    row-gap: rem(24);
+  }
+
   .vacancies {
     $vacancies: &;
     display: flex;
@@ -21,6 +26,11 @@
 
   .outerLinks{
     padding-left: 33%;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+
     &__text{
       padding: rem(20) 0;
     }
@@ -29,6 +39,10 @@
         min-width: rem(150);
         float: left;
         margin-right: rem(10);
+
+        @include media-breakpoint-down(sm) {
+          min-width: rem(120);
+        }
       }
     }
     &__images {
@@ -43,6 +57,13 @@
         float: left;
         margin-left: -20px;
         border: 6px solid $color-dark-green;
+
+        @include media-breakpoint-down(sm) {
+          width: 64px;
+          height: 64px;
+          margin-left: -16px;
+          border-width: 4px;
+        }
       }
     }
   }
@@ -50,7 +71,10 @@
   &__item {
     @include image-div;
     height: rem(300);
-    width: rem(362);
+    width: 100%;
 
+    @include media-breakpoint-down(sm) {
+      height: rem(200);
+    }
   }
 }

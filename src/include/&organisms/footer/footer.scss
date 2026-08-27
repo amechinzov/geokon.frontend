@@ -167,8 +167,9 @@
     gap: rem(8);
     margin-top: rem(40);
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-down(md) {
       margin-top: rem(60);
+      align-items: initial;
     }
   }
 

@@ -10,6 +10,15 @@
   padding: rem(150) rem(533) rem(146) rem(533);
   position: relative;
 
+  @include media-breakpoint-down(md) {
+    padding: rem(80) rem(24) rem(60);
+    min-height: auto;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(60) rem(16) rem(40);
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -23,6 +32,7 @@
 
   &-wrapper {
     position: relative;
+    width: 100%;
   }
 
   &__title {
@@ -32,12 +42,27 @@
     font-weight: 600;
     text-transform: uppercase;
     padding-bottom: rem(24);
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(36);
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: rem(24);
+      padding-bottom: rem(16);
+    }
   }
 
   &__buttons {
     display: flex;
     justify-content: space-around;
     gap: rem(10);
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(12);
+    }
   }
 
   &__orLine {
@@ -50,6 +75,11 @@
     text-align: center;
     font-family: $font-family-bebas;
     position: relative;
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(20);
+      margin-bottom: rem(24);
+    }
 
     &:before {
       content: '';
