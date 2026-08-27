@@ -28,7 +28,7 @@
     #{$root}__title {
       width: 65%;
       padding-right: 15%;
-      font-size: rem(56);
+      font-size: rem(58);
       line-height: 72px;
       font-family: $font-family-bebas;
 
@@ -179,6 +179,14 @@
     @include media-breakpoint-down(md) {
       min-width: 100%;
       min-height: rem(250);
+      margin-top: rem(24);
+      order: 1;
+    }
+  }
+
+  .bullets {
+    @include media-breakpoint-down(md) {
+      order: 2;
       margin-top: rem(24);
     }
   }

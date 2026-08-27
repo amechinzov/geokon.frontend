@@ -4,6 +4,11 @@
   color: $color-primary;
   width: columns12(8);
   margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+
   &__title {
     font-size: rem(32);
     margin-top: rem(32);
