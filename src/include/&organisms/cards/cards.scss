@@ -31,7 +31,7 @@
 
     @include media-breakpoint-down(md) {
       width: 47%;
-      height: rem(320);
+      height: rem(260);
     }
 
     @include media-breakpoint-down(sm) {
@@ -61,8 +61,8 @@
       overflow-wrap: break-word;
       word-wrap: break-word;
 
-      @include media-breakpoint-down(sm) {
-        font-size: rem(24);
+      @include media-breakpoint-down(md) {
+        font-size: rem(18);
       }
     }
     &-button {
@@ -84,6 +84,9 @@
         color: $color-primary;
         width: 44px;
         height: 44px;
+      }
+      @include media-breakpoint-down(md) {
+        display: none;
       }
     }
     &-text{
