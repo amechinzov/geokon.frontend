@@ -2,7 +2,16 @@
     $root: &;
 
     @include background(cover, bottom);
+    @include media-breakpoint-down(md) {
+        padding-bottom: rem(200);
+    }
     display: flex;
+    .button {
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            padding-top: rem(16);
+        }
+    }
 
     &__content{
         display: flex;
@@ -13,7 +22,6 @@
 
         @include media-breakpoint-down(md) {
             width: 100%;
-            padding: rem(40) 0;
         }
     }
 

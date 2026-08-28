@@ -35,10 +35,7 @@
     }
 
     @include media-breakpoint-down(sm) {
-      width: 100%;
-      height: auto;
-      min-height: rem(250);
-      margin: 0 0 rem(16) 0;
+
     }
 
     &-content{
