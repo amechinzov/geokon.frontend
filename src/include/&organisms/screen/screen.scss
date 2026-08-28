@@ -159,7 +159,11 @@
 
   &__theme-grey {
     background-color: $color-grey;
-    color: $color-dark-green;
+    color: $color-primary;
+
+    #{$root}__title {
+      color: $color-dark-green;
+    }
 
   }
 
