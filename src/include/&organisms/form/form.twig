@@ -50,11 +50,20 @@
         </div>
     {% endif %}
 
+    {% set hasConsentCheckbox = false %}
+    {% if block.fields %}
+        {% for field in block.fields %}
+            {% if field.checkbox and field.required %}
+                {% set hasConsentCheckbox = true %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
     {% if block.submit %}
         <div class="form__submit {{ block.submit.class }}">
             <div class="form__action" data-splitting data-delay="1.6">
                 {% view '@button' with {
-                    button: block.submit
+                    button: block.submit|merge(hasConsentCheckbox ? {disabled: true} : {})
                 } %}
             </div>
             {% if block.submit.policy %}

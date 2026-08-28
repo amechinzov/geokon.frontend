@@ -16,10 +16,16 @@ import modal from './components/modal/index.js';
 import filter from './components/filter/index.js';
 import anchorScroll from './components/anchor-scroll/index.js';
 import mobileMenu from './components/mobile-menu/index.js';
+import formConsent from './components/form-consent/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   modal.init();
   filter.init();
   anchorScroll.init();
   mobileMenu.init();
+  formConsent.init();
+});
+
+window.addEventListener('reinit', () => {
+  formConsent.init();
 });
