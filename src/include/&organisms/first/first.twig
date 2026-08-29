@@ -1,4 +1,10 @@
-<div class="first" {% if block.background %} style="background-image: url('{{ block.background.src }}')" {% endif %}>
+<div class="first">
+    {% if block.background %}
+        <img class="first__bg first__bg--desktop" src="{{ block.background.src }}" alt="{{ block.background.alt }}">
+        {% if block.background.src_mobile %}
+            <img class="first__bg first__bg--mobile" src="{{ block.background.src_mobile }}" alt="{{ block.background.alt }}">
+        {% endif %}
+    {% endif %}
     <div class="container">
         <div class="first__content">
             {% if block.socials %}

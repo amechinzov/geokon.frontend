@@ -59,7 +59,8 @@
       "href": "#"
     },
     "background": {
-      "src": "/img/background/first.jpg",
+      "src": "/img/background/first.png",
+      "src_mobile": "/img/background/first_mobile.png",
       "alt": "background"
     },
     "socials": {
