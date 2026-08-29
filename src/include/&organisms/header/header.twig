@@ -1,12 +1,9 @@
-{% set logoIcon = header.logo.icon ?: {
-    name:  'logos/logo'
-} %}
 <header class="header{% if header.theme %} header--{{ header.theme }}{% endif %}{% if header.pin %} is-pinned{% endif %}" {% if header.pin %} data-header-pin {% endif %} {% if header.hiding %} data-header-hiding {% endif %}>
     <div class=" header__container container" data-animate-custom>
         <div class=" header__inner">
             <div class="header__content">
                 <a class="header__mobile-logo" href="/">
-                    {% view '@icon' with {icon: logoIcon} %}
+                    {% view '@icon' with {icon: { name: 'logos/logo_mobile' }} %}
                 </a>
                 <button class="header__burger" data-burger aria-label="Меню"><span></span></button>
                 <div class="header__top">
